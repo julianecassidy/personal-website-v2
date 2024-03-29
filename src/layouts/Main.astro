@@ -1,19 +1,13 @@
 ---
+import Nav from '@components/Nav.astro';
+import Footer from '@components/Footer.astro';
 
-interface StringTitleProp {
-  pageTitle: string;
-  pageDesc?: string;
-}
-
-export type Props = StringTitleProp;
-
-const { props } = Astro;
 ---
 
 <main id="main-content">
-    <h1>{props.pageTitle}</h1>
-    <p>{props.pageDesc}</p>
+    <Nav></Nav>
     <slot />
+    <Footer />
   </main>
 
   <style>

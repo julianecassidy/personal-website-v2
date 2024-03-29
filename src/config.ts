@@ -1,4 +1,4 @@
-import type { Site } from "./types";
+import type { Site, Project } from "./types";
 
 export const SITE: Site = {
   website: "https://julianecassidy.com", // replace this with your deployed domain
@@ -20,3 +20,84 @@ export const LOGO_IMAGE = {
   width: 400,
   height: 46,
 };
+
+const randomRhythms: Project = {
+  title: "Random Rhythms",
+  description: "Lorem ipsum",
+  languages: [
+    "TypeScript",
+    "React",
+    "Vite",
+    "Tailwind CSS",
+    "JavaScript",
+    "Node.js",
+    "Express",
+    "PostgreSQL"
+  ],
+  demoUrl: "",
+  githubUrl: "https://github.com/julianecassidy/randomrhythms",
+  slug: "randomrhythms",
+  images: [""],
+};
+
+const jobify: Project = {
+  title: "Jobify",
+  description: "Lorem ipsum",
+  languages: [
+    "JavaScript",
+    "React",
+    "Node.js",
+    "Express",
+    "PostgreSQL",
+    "Bcrypt",
+  ],
+  demoUrl: "https://jobify.julianecassidy.com/",
+  githubUrl: "https://github.com/julianecassidy/react-jobify",
+  slug: "jobify",
+  images: [""],
+};
+
+const flitter: Project = {
+  title: "Flitter",
+  description: "Lorem ipsum",
+  languages: [
+    "Python",
+    "Flask",
+    "SQLAlchemy",
+    "PostgreSQL",
+    "Jinja",
+    "Bcrypt",
+  ],
+  demoUrl: "https://flitter.julianecassidy.com/",
+  githubUrl: "https://github.com/julianecassidy/flitter",
+  slug: "flitter",
+  images: [""],
+};
+
+const webDesign: Project = {
+  title: "Web Design",
+  description: "Lorem ipsum",
+  languages: [
+    "TypeScript",
+    "JavaScript",
+    "React",
+    "Astro",
+    "WordPress",
+    "CSS",
+    "HTML",
+    "Tailwind CSS",
+    "Bootstrap",
+    "Figma",
+  ],
+  demoUrl: "",
+  githubUrl: "",
+  slug: "web-design",
+  images: [""],
+};
+
+export const PROJECTS: Array<Project> = [
+  randomRhythms,
+  jobify,
+  flitter,
+  webDesign,
+];

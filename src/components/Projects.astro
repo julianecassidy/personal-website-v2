@@ -1,0 +1,13 @@
+---
+import { PROJECTS } from "@config";
+import ProjectCard from "@components/ProjectCard.astro"
+
+---
+<section id="projects">
+    <div class="projects-title">
+        <h2>Projects</h2>
+    </div>
+    <div class="projects-list">
+        {PROJECTS.map(p => <ProjectCard project={p} />)}
+    </div>
+</section>

@@ -1,0 +1,23 @@
+---
+export interface Props {
+    pageTitle: string;
+    pageDesc: string;
+    accentText?: string;
+}
+
+const { pageTitle, pageDesc, accentText } = Astro.props;
+---
+
+<header>
+    <div class="header">
+        {accentText && <div class="header-accent">{accentText}</div>}
+        <div class="header-title">
+            {pageTitle}
+        </div>
+        <div class="header-desc">
+            {pageDesc}
+        </div>
+    </div>
+</header>
+
+<style></style>

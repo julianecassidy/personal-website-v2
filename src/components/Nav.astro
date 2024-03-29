@@ -1,0 +1,66 @@
+---
+import { LOGO_IMAGE, SITE } from "@config";
+
+export interface Props {
+  activeNav?:
+    | "about"
+    | "projects"
+    | "blog"
+    | "contact"
+}
+
+const { activeNav } = Astro.props;
+---
+<div class="nav-logo">
+    <a href="/" class="logo whitespace-nowrap">
+      {
+        LOGO_IMAGE.enable ? (
+          <img
+            src={`/assets/${LOGO_IMAGE.svg ? "logo.svg" : "logo.png"}`}
+            alt={SITE.title}
+            width={LOGO_IMAGE.width}
+            height={LOGO_IMAGE.height}
+          />
+        ) : (
+          SITE.title
+        )
+      }
+    </a>
+  </div>
+  <nav id="nav-menu">
+    <ul id="menu-items" class="display-none sm:flex">
+    </li>
+    <li>
+      <a
+        href="/projects"
+        class={activeNav === "projects" ? "active" : ""}
+      >
+        Projects
+      </a>
+    </li>
+    <li>
+      <a
+        href="/about"
+        class={activeNav === "about" ? "active" : ""}
+      >
+        About
+      </a>
+    </li>
+    <li>
+      <a
+        href="/blog"
+        class={activeNav === "blog" ? "active" : ""}
+      >
+        Blog
+      </a>
+    </li>
+    <li>
+      <a
+        href="/contact"
+        class={activeNav === "contact" ? "active" : ""}
+      >
+        Get in Touch
+      </a>
+    </li>
+  </ul>
+</nav>

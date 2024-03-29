@@ -1,0 +1,15 @@
+---
+import type { Project } from 'types';
+const DEFAULT_IMAGE = "";
+
+export interface Props {
+    project: Project;
+    idx: number;
+}
+
+const { project, idx } = Astro.props;
+const { title, description, languages, demoUrl, githubUrl, slug, images } = project;
+---
+<div class="project-card">
+
+</div>
