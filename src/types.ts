@@ -16,3 +16,16 @@ export type Project = {
   slug: string;
   images: Array<string>;
 }
+
+export type Skill = {
+  name: string;
+  svg: string;
+  fill: string;
+}
+
+export type Experience = {
+  role: string;
+  company: string;
+  timeSpan: string;
+  description: string;
+}

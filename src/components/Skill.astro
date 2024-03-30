@@ -1,0 +1,22 @@
+---
+import type { Skill } from 'types';
+
+export interface Props {
+    skill: Skill;
+}
+
+const { skill } = Astro.props;
+const { name, svg, fill } = skill;
+
+---
+<div class="skill">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="95"
+    height="95"
+    fill="none"
+>
+    <path d="M0 0h95v95H0z" fill={fill}></path>
+    <path d="" fill={svg}></path>
+</svg>

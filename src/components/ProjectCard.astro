@@ -8,8 +8,36 @@ export interface Props {
 }
 
 const { project, idx } = Astro.props;
-const { title, description, languages, demoUrl, githubUrl, slug, images } = project;
+const {
+    title,
+    description,
+    languages,
+    demoUrl,
+    githubUrl,
+    slug,
+    images
+} = project;
+
+const directionClass = idx % 2 === 0 ? "left" : "right";
 ---
 <div class="project-card">
-
+    <div class="project-image">
+        <img
+            class="project-img-src"
+            src={images[0]}
+            alt=`${title} screenshot`
+        />
+        <svg></svg>
+    </div>
+    <div class="project-content">
+        <h3>{title}</h3>
+        <p>{description}</p>
+        <div class="project-links">
+            <svg></svg>
+            <svg></svg>
+            <button>read more
+                <svg></svg>
+            </button>
+        </div>
+    </div>
 </div>

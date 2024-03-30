@@ -1,4 +1,5 @@
-import type { Site, Project } from "./types";
+import type { EventEmitterAsyncResource } from "events";
+import type { Site, Project, Skill, Experience } from "./types";
 
 export const SITE: Site = {
   website: "https://julianecassidy.com", // replace this with your deployed domain
@@ -101,3 +102,29 @@ export const PROJECTS: Array<Project> = [
   flitter,
   webDesign,
 ];
+
+export const SKILLS: Array<Skill> = [
+  {name: "TypeScript", svg: "", fill: ""},
+  {name: "JavaScript", svg: "", fill: ""},
+  {name: "React", svg: "", fill: ""},
+  {name: "Express", svg: "", fill: ""},
+  {name: "Python", svg: "", fill: ""},
+  {name: "Django", svg: "", fill: ""},
+  {name: "Flask", svg: "", fill: ""},
+  {name: "SQL", svg: "", fill: ""},
+  {name: "PostgreSQL", svg: "", fill: ""},
+  {name: "Tailwind CSS", svg: "", fill: ""},
+  {name: "AWS", svg: "", fill: ""},
+  {name: "Astro", svg: "", fill: ""},
+]
+
+const rithm: Experience = {
+  role: "Software Engineer and Teaching Assistant",
+  company: "Rithm School",
+  timeSpan: "June 2023 - Present",
+  description: "Lorem ipsum."
+}
+
+export const EXPERIENCES: Array<Experience> = [
+  rithm,
+]

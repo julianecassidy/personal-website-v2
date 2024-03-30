@@ -1,0 +1,16 @@
+---
+import { EXPERIENCES } from "@config";
+import ExperienceCard from "./ExperienceCard.astro";
+
+---
+<section id="experience">
+    <div class="experience-title">
+        <h2>Experience</h2>
+    </div>
+    <button>resume
+        <svg></svg>
+    </button>
+    <div class="experience-list">
+        {EXPERIENCES.map(e => <ExperienceCard experience={e} />)}
+    </div>
+</section>
