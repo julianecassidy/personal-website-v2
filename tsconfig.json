@@ -1,7 +1,7 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "baseUrl": "src",
+    "baseUrl": "/home/juliane/portfolio/personal-website-v2/src",
     "jsx": "react-jsx",
     "target": "es2017",
     "lib": [
@@ -29,6 +29,7 @@
       "@utils/*": [
         "utils/*"
       ]
-    }
+    },
+    "jsxImportSource": "react"
   }
 }

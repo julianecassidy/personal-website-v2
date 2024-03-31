@@ -1,0 +1,24 @@
+---
+import type { Experience } from 'types';
+
+export interface Props {
+    experience: Experience;
+}
+
+const { experience } = Astro.props;
+const {
+    role,
+    company,
+    timeSpan,
+    description
+} = experience;
+
+---
+<div class="experience-card">
+    <div class="experience-content">
+        <h3>{role}</h3>
+        <p>{timeSpan}</p>
+        <p>{company}</p>
+        <p>{description}</p>
+    </div>
+</div>

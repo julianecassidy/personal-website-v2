@@ -29,3 +29,16 @@ export type Experience = {
   timeSpan: string;
   description: string;
 }
+
+export type Post = {
+  id: number;
+  permalink: string;
+  content: string;
+  date: string;
+  canonical: string;
+}
+
+export type Tag = {
+  id: number;
+  name: string;
+}

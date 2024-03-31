@@ -1,4 +1,3 @@
-import type { EventEmitterAsyncResource } from "events";
 import type { Site, Project, Skill, Experience } from "./types";
 
 export const SITE: Site = {
