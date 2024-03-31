@@ -14,6 +14,8 @@ export default function ContactForm() {
         name: "", email: "", message: ""
     });
 
+    console.log(formData);
+
     const charLimitClass = formData.message.length < MAX_CHAR
         ? "text-base"
         : "text-accent";

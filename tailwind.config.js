@@ -17,7 +17,7 @@ export default {
         secondary: withOpacity("--color-secondary"),
         accent: withOpacity("--color-accent"),
         fill: withOpacity("--color-fill"),
-        text: withOpacity("--color-text"),
+        base: withOpacity("--color-base"),
         border: withOpacity("--color-border"),
         muted: withOpacity("--color-muted")
       },

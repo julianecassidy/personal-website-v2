@@ -33,6 +33,18 @@
   html[data-theme="dark"] #light-on-svg {
     display: block;
   }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-center tracking-wider text-base;
+  }
+  h1 {
+    @apply text-8xl;
+  }
+  h2 {
+    @apply text-5xl;
+  }
+  h3 {
+    @aplly text-4xl;
+  }
   body {
     @apply flex min-h-[100svh] flex-col bg-fill font-body text-base
     selection:bg-accent selection:bg-opacity-70;

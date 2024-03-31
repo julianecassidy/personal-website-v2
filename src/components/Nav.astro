@@ -2,16 +2,14 @@
 import { LOGO_IMAGE, SITE } from "@config";
 
 export interface Props {
-  activeNav?:
-    | "about"
-    | "projects"
-    | "blog"
-    | "contact"
+  activeNav?: "about" | "projects" | "blog" | "contact";
 }
 
 const { activeNav } = Astro.props;
 ---
-<div class="nav-logo">
+
+<div class="nav">
+  <div class="nav-logo">
     <a href="/" class="logo whitespace-nowrap">
       {
         LOGO_IMAGE.enable ? (
@@ -28,39 +26,41 @@ const { activeNav } = Astro.props;
     </a>
   </div>
   <nav id="nav-menu">
-    <ul id="menu-items" class="display-none sm:flex">
-    </li>
+    <ul id="menu-items" class="display-none sm:flex"></ul>
     <li>
-      <a
-        href="/projects"
-        class={activeNav === "projects" ? "active" : ""}
-      >
+      <a href="/projects" class={activeNav === "projects" ? "active" : ""}>
         Projects
       </a>
     </li>
     <li>
-      <a
-        href="/about"
-        class={activeNav === "about" ? "active" : ""}
-      >
-        About
-      </a>
+      <a href="/about" class={activeNav === "about" ? "active" : ""}> About </a>
     </li>
     <li>
-      <a
-        href="/blog"
-        class={activeNav === "blog" ? "active" : ""}
-      >
-        Blog
-      </a>
+      <a href="/blog" class={activeNav === "blog" ? "active" : ""}> Blog </a>
     </li>
     <li>
-      <a
-        href="/contact"
-        class={activeNav === "contact" ? "active" : ""}
-      >
+      <a href="/contact" class={activeNav === "contact" ? "active" : ""}>
         Get in Touch
       </a>
     </li>
-  </ul>
-</nav>
+    <li>
+        <svg></svg>
+      </a>
+    </li>
+  </nav>
+</div>
+
+<style>
+  .nav {
+    @apply flex w-full mt-4;
+  }
+  .nav-logo {
+    @apply w-2/12 ml-2;
+  }
+  #nav-menu {
+    @apply flex justify-end w-10/12;
+  }
+  #nav-menu li {
+    @apply mx-3 list-none font-display text-2xl uppercase;
+  }
+</style>
