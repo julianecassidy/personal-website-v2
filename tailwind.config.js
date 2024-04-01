@@ -11,6 +11,11 @@ function withOpacity(variableName) {
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}"],
   theme: {
+    screens: {
+      sm: "640px",
+      md: "1040px",
+      lg: "1200px",
+    },
     extend: {
       colors: {
         primary: withOpacity("--color-primary"),

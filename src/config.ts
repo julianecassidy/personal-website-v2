@@ -17,8 +17,8 @@ export const LOCALE = {
 export const LOGO_IMAGE = {
   enable: true,
   svg: true,
-  width: 400,
-  height: 46,
+  width: 141,
+  height: 78,
 };
 
 const randomRhythms: Project = {

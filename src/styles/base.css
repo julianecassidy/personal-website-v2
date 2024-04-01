@@ -37,7 +37,7 @@
     @apply font-serif text-center tracking-wider text-base;
   }
   h1 {
-    @apply text-8xl;
+    @apply text-3xl sm:text-7xl md:text-8xl;
   }
   h2 {
     @apply text-5xl;
@@ -50,13 +50,13 @@
     selection:bg-accent selection:bg-opacity-70;
   }
   section {
-    @apply mx-auto max-w-3xl px-4;
+    @apply mx-auto max-w-4xl px-4;
   }
   footer {
     @apply mx-0 max-w-full;
   }
   svg {
-    @apply inline-block h-6 w-6 fill-primary group-hover:fill-accent;
+    @apply inline-block h-6 w-6;
   }
   svg.icon-tabler {
     @apply inline-block h-6 w-6 scale-125 fill-transparent
@@ -89,7 +89,7 @@
     @apply mb-2;
   }
   .prose details {
-    @apply inline-block cursor-pointer select-none text-skin-base;
+    @apply inline-block cursor-pointer select-none text-base;
   }
   .prose summary {
     @apply focus-outline;
@@ -113,17 +113,17 @@
 
   /* Track */
   ::-webkit-scrollbar-track {
-    @apply bg-fill;
+    @apply bg-muted;
   }
 
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    @apply bg-accent;
+    @apply bg-secondary;
   }
 
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-muted;
+    @apply bg-primary;
   }
 
   code,
@@ -141,6 +141,6 @@
     @apply hidden;
   }
   .focus-outline {
-    @apply outline-2 outline-offset-1 outline-skin-fill focus-visible:no-underline focus-visible:outline-dashed;
+    @apply outline-2 outline-offset-1 outline-fill focus-visible:no-underline focus-visible:outline-dashed;
   }
 }
