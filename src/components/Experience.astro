@@ -1,16 +1,44 @@
 ---
 import { EXPERIENCES } from "@config";
 import ExperienceCard from "./ExperienceCard.astro";
-
+import Button from "./Button.astro";
 ---
+
 <section id="experience">
-    <div class="experience-title">
-        <h2>Experience</h2>
+    <div class="experience-left">
+        <div class="experience-header">
+            <div class="experience-title">
+                <h3>Experience</h3>
+            </div>
+            <div class="experience-title-line"></div>
+        </div>
+        <Button
+            href="resume"
+            text="Resume"
+            className="mx-auto"
+            ariaLabel={"resume"}
+            title={"resume"}
+        />
     </div>
-    <button>resume
-        <svg></svg>
-    </button>
     <div class="experience-list">
-        {EXPERIENCES.map(e => <ExperienceCard experience={e} />)}
+        {EXPERIENCES.map((e) => <ExperienceCard experience={e} />)}
     </div>
 </section>
+
+<style>
+    #experience {
+        @apply flex flex-wrap justify-center gap-10 sm:flex-nowrap mb-3;
+    }
+    .experience-left {
+        @apply flex flex-wrap justify-center self-start sm:w-1/4 sm:mt-12;
+    }
+    .experience-header {
+        @apply relative w-full sm:w-72 mx-auto mt-6 mb-12;
+    }
+    .experience-title {
+        @apply relative z-20;
+    }
+    .experience-title-line {
+        @apply bg-secondary w-28 sm:w-36 h-6 absolute -bottom-3 -left-3 sm:right-0 z-10;
+    }
+</style>

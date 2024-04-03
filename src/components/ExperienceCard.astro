@@ -15,10 +15,27 @@ const {
 
 ---
 <div class="experience-card">
-    <div class="experience-content">
-        <h3>{role}</h3>
-        <p>{timeSpan}</p>
-        <p>{company}</p>
-        <p>{description}</p>
-    </div>
+    <div class="experience-role">{role}</div>
+    <div class="experience-timeSpan">{timeSpan}</div>
+    <div class="experience-company">{company}</div>
+    <div class="experience-desrciption">{description}</div>
 </div>
+
+<style>
+    .experience-card {
+        @apply border-2 border-border rounded-lg my-8 p-4 flex flex-wrap
+        w-full;
+    }
+    .experience-role {
+        @apply font-sans text-xl text-left font-semibold w-3/5;
+    }
+    .experience-timeSpan {
+        @apply font-sans text-lg text-right w-2/5;
+    }
+    .experience-company {
+        @apply font-sans text-lg text-left w-full;
+    }
+    .experience-description {
+        @apply w-full;
+    }
+</style>

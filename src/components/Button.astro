@@ -18,11 +18,10 @@ const {
 } = Astro.props;
 ---
 
-<button class={className}>
+<button class=`${className} group`>
     <a
         href={disabled ? "#" : href}
         tabindex={disabled ? "-1" : "0"}
-        class="group"
         aria-label={ariaLabel}
         title={title}
         aria-disabled={disabled}
@@ -39,7 +38,7 @@ const {
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        class="-rotate-180 transform transition-all hover:rotate-0"
+        class="-rotate-180 transform transition-all group-hover:rotate-0"
         ><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg
     >
 </button>

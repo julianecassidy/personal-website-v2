@@ -43,7 +43,10 @@
     @apply text-5xl;
   }
   h3 {
-    @aplly text-4xl;
+    @apply text-4xl;
+  }
+  p {
+    @apply mb-4;
   }
   body {
     @apply flex min-h-[100svh] flex-col bg-fill font-body text-base
