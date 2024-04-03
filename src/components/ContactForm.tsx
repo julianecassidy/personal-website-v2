@@ -37,7 +37,7 @@ export default function ContactForm() {
   };
 
     return (
-        <form className="contact-form" data-netlify="true" method="POST">
+        <form className="contact-form py-4 px-12 border-2 border-border rounded-lg w-2/5">
             <label>Name: <span className="contact-form-required">*</span></label>
             <input
                 type="text"

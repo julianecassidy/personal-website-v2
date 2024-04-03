@@ -1,18 +1,46 @@
 ---
 import ContactForm from "@components/ContactForm";
-
 ---
+
 <section id="contact">
-    <div class="contact-title">
-        <h2>Get In Touch</h2>
+    <div class="contact-header">
+        <div class="contact-title">
+            <h2>Get In Touch</h2>
+        </div>
+        <div class="contact-title-line"></div>
     </div>
-    <ContactForm client:load />
-    <div class="contact-content">
-        <p>Lorem ipsum.</p>
-        <div class="contact-links">
-            <a href="mailto:julianecassidy@gmail.com"><svg></svg></a>
-            <a href="https://www.linkedin.com/in/julianemcassidy/"><svg></svg></a>
-            <a href="https://github.com/julianecassidy"><svg></svg></a>
+    <div class="contact-body">
+        <ContactForm client:load />
+        <div class="contact-content">
+            <p>Lorem ipsum.</p>
+            <div class="contact-links">
+                <a href="mailto:julianecassidy@gmail.com"><svg></svg></a>
+                <a href="https://www.linkedin.com/in/julianemcassidy/"
+                    ><svg></svg></a
+                >
+                <a href="https://github.com/julianecassidy"><svg></svg></a>
+            </div>
         </div>
     </div>
 </section>
+
+<style>
+    #contact {
+        @apply mb-8;
+    }
+    .contact-header {
+        @apply relative w-72 mx-auto mt-6 mb-12;
+    }
+    .contact-title {
+        @apply relative z-20;
+    }
+    .contact-title-line {
+        @apply bg-accent w-28 sm:w-36 h-6 absolute -bottom-2 right-6 sm:right-0 z-10;
+    }
+    .contact-body {
+        @apply flex flex-wrap gap-12 flex-row-reverse sm:flex-nowrap sm:flex-row;
+    }
+    .contact-content {
+        @apply w-full sm:w-1/2;
+    }
+</style>
