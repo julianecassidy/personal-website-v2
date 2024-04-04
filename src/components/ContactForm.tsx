@@ -17,7 +17,7 @@ export default function ContactForm() {
     const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
     const [formError, setFormError] = useState<string>("");
 
-    console.log(formData);
+    // console.log(formData);
 
     const charLimitClass = formData.message.length < MAX_CHAR
         ? "text-base text-xs text-right"

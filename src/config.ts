@@ -23,7 +23,9 @@ export const LOGO_IMAGE = {
 
 const randomRhythms: Project = {
   title: "Random Rhythms",
-  description: "Lorem ipsum",
+  description: `Explore local concerts in new genres. This full stack app relies
+    on several APIs to collect concert data and provides random concert suggestions
+    based on distance and price.`,
   languages: [
     "TypeScript",
     "React",
@@ -42,7 +44,9 @@ const randomRhythms: Project = {
 
 const jobify: Project = {
   title: "Jobify",
-  description: "Lorem ipsum",
+  description: `A full stack, job finding website with a that lets users create
+  accounts to view companies and available jobs. | Demo username: guest | Demo
+  password: password`,
   languages: [
     "JavaScript",
     "React",
@@ -59,7 +63,8 @@ const jobify: Project = {
 
 const flitter: Project = {
   title: "Flitter",
-  description: "Lorem ipsum",
+  description: `A fully backend Twitter clone. Users can create a profile, post
+    messages, like others messages, and follow other users.`,
   languages: [
     "Python",
     "Flask",
@@ -76,7 +81,9 @@ const flitter: Project = {
 
 const webDesign: Project = {
   title: "Web Design",
-  description: "Lorem ipsum",
+  description: `Experienced in web development and SEO, I build websites for small
+    businesses and individual portfolios. I can design, build, and write content
+    for a fast and beautiful site.`,
   languages: [
     "TypeScript",
     "JavaScript",
@@ -120,10 +127,44 @@ export const SKILLS: Array<Skill> = [
 const rithm: Experience = {
   role: "Software Engineer and Teaching Assistant",
   company: "Rithm School",
-  timeSpan: "June 2023 - Present",
-  description: "Lorem ipsum."
+  timeSpan: "Jun 2023 - Present",
+  description: `Teaching a fast-paced full stack development curriculum over
+    16 weeks. Also working on a Django student management system and maintaining
+    a constantly-changing curriculum.`
+}
+
+const greatLeap: Experience = {
+  role: "Digital Marketing Specialist",
+  company: "Great Leap Studios",
+  timeSpan: "Aug 2020 - Feb 2023",
+  description: `Built and maintained over 50 websites in WordPress and wrote more
+    than 5,000 words per day of digital, SEO content.`
+}
+
+const betterment: Experience = {
+  role: "Banking Services Associate",
+  company: "Betterment",
+  timeSpan: "Jan 2020 - Aug 2020",
+  description: `Provided phone and email support to customers to assist with
+    technical and product questions.`
+}
+
+const tco: Experience = {
+  role: "Development Database Coordinator",
+  company: "The Cleveland Orchestra",
+  timeSpan: "Jan 2019 - Feb 2020",
+  description: `Managed the Tessitura CRM for a multi-million dollar fundraising
+    department and provided custom SQL reporting.`
+}
+
+const bws: Experience = {
+  role: "Annual Giving Coordinator",
+  company: "Broadway Sacramento",
+  timeSpan: "Jan 2016 - Dec 2018",
+  description: `Lead the conversion of the Development team onto Tessitura and
+    managed all department reporting and annual giving campaigns.`
 }
 
 export const EXPERIENCES: Array<Experience> = [
-  rithm,
+  rithm, greatLeap, betterment, tco, bws,
 ]

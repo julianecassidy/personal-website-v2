@@ -53,18 +53,18 @@ const { activeNav } = Astro.props;
       </button>
     <ul id="menu-items" class="display-none sm:flex sm:items-center">
     <li>
-      <a href="/projects" class={activeNav === "projects" ? "active" : ""}>
+      <a href="#projects" class={activeNav === "projects" ? "active" : ""}>
         Projects
       </a>
     </li>
     <li>
-      <a href="/about" class={activeNav === "about" ? "active" : ""}> About </a>
+      <a href="#about" class={activeNav === "about" ? "active" : ""}> About </a>
     </li>
     <li>
       <a href="/blog" class={activeNav === "blog" ? "active" : ""}> Blog </a>
     </li>
     <li>
-      <a href="/contact" class={activeNav === "contact" ? "active" : ""}>
+      <a href="#contact" class={activeNav === "contact" ? "active" : ""}>
         Get in Touch
       </a>
     </li>
@@ -74,7 +74,7 @@ const { activeNav } = Astro.props;
   </ul>
   <ul id="mobile-menu-items" class="display-none">
     <li>
-      <a href="/projects" class={activeNav === "projects" ? "active" : ""}>
+      <a href="#projects" class={activeNav === "projects" ? "active" : ""}>
         Projects
       </a>
     </li>
