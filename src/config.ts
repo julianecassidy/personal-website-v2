@@ -103,18 +103,18 @@ export const PROJECTS: Array<Project> = [
 ];
 
 export const SKILLS: Array<Skill> = [
-  {name: "TypeScript", svg: "", fill: ""},
-  {name: "JavaScript", svg: "", fill: ""},
-  {name: "React", svg: "", fill: ""},
-  {name: "Express", svg: "", fill: ""},
-  {name: "Python", svg: "", fill: ""},
-  {name: "Django", svg: "", fill: ""},
-  {name: "Flask", svg: "", fill: ""},
-  {name: "SQL", svg: "", fill: ""},
-  {name: "PostgreSQL", svg: "", fill: ""},
-  {name: "Tailwind CSS", svg: "", fill: ""},
-  {name: "AWS", svg: "", fill: ""},
-  {name: "Astro", svg: "", fill: ""},
+  {name: "TypeScript", svg: "typescript.svg", fill: "#283953"},
+  {name: "JavaScript", svg: "javascript.svg", fill: "#d7bb2f"},
+  {name: "React", svg: "react.svg", fill: "#222222"},
+  {name: "Express", svg: "express.svg", fill: "#259dff;"},
+  {name: "Python", svg: "python.svg", fill: "#1d405d"},
+  {name: "Django", svg: "django.svg", fill: "#0c4b33"},
+  {name: "Flask", svg: "flask.svg", fill: "#77c6d1"},
+  {name: "PostgreSQL", svg: "postgres.svg", fill: "#336791"},
+  {name: "TailwindCSS", svg: "tailwind.svg", fill: "#0f172a"},
+  {name: "AWS", svg: "aws.svg", fill: "#f3f5f7"},
+  {name: "Vite", svg: "vite.svg", fill: "#646cff"},
+  {name: "Astro", svg: "astro.svg", fill: "#291c42"},
 ]
 
 const rithm: Experience = {
