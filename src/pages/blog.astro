@@ -1,0 +1,49 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Main from "@layouts/Main.astro";
+import Post from "@layouts/Post.astro";
+import Header from "@components/Header.astro";
+import BlogPostCard from "@components/BlogPostCard.astro";
+import { BlogApi } from "@utils/blogApi";
+
+const pageTitle = "Blog";
+const pageDesc = `follow along with what I’m learning, apps I’m building,
+and other thoughts, both technical and not`;
+
+const postData = await BlogApi.getPosts();
+const posts = postData.map((post) => ({
+    ...post,
+    date: BlogApi.formatDate(post.date),
+}));
+
+---
+
+<Layout title="Juliane Cassidy">
+    <Main>
+        <Header pageTitle={pageTitle} pageDesc={pageDesc} />
+        <Post>
+            {posts.length === 0
+                ? <div class="blog-no-posts"><p>No posts to display.</p></div>
+                : <div class="blog-posts">
+                    {posts.map(post =>
+                        <BlogPostCard
+                            id={post.id}
+                            permalink={post.permalink}
+                            title={post.title}
+                            content={post.content}
+                            date={post.date}
+                            tags={post.tags}
+                        />
+                    )}
+                </div>
+            }
+        </Post>
+    </Main>
+</Layout>
+
+<style>
+    .blog-posts {
+        @apply flex flex-wrap gap-16 justify-center;
+    }
+
+</style>

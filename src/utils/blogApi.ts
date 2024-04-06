@@ -1,16 +1,8 @@
 import type { Post, Tag } from "../types";
 
-const STRAPI_BASE_URL = process.env.REACT_APP_STRAPI_URL || "http://localhost:1337/api/";
+const STRAPI_BASE_URL = import.meta.env.STRAPI_URL || "http://localhost:1337/api/";
 const STRAPI_SORT_PARAM = "sort=publishedAt:desc";
 const STAPI_RELATION_PARAM = "populate=*";
-
-interface TaggedPost extends Post {
-  tags: Array<Tag>;
-}
-
-interface SinglePost extends Post {
-  tags: Array<string>;
-}
 
 /** Blog Post API Class.
  * Static class tying to get blog posts from Strapi API.
@@ -24,12 +16,13 @@ class BlogApi {
      * title: "Title",
      * permalink: "title",
      * content: 'Lorem ipusm.'
-     * date: 2023-09-06T22:23:59.146Z}, ... ]
+     * date: 2023-09-06T22:23:59.146Z},
+     * tags: { name, id }}, ... ]
      */
     static async getPosts() : Promise<Array<Post>> {
         // console.debug("getPosts");
         const resp = await fetch(
-            `${STRAPI_BASE_URL}personal-blogs?${STRAPI_SORT_PARAM}`
+            `${STRAPI_BASE_URL}personal-blogs?${STRAPI_SORT_PARAM}&${STAPI_RELATION_PARAM}`
         );
         const postData = await resp.json();
         const posts = postData.data.map((post: any) => {
@@ -39,6 +32,13 @@ class BlogApi {
                 permalink: post.attributes.Permalink,
                 content: post.attributes.Content,
                 date: post.attributes.publishedAt,
+                tags: post.attributes.categories.data.map((category: any) =>{
+                    const tag = {
+                        name: category.attributes.Tag,
+                        id: category.id,
+                    }
+                    return tag;
+                }),
             };
             return data;
         })
@@ -73,9 +73,9 @@ class BlogApi {
      * permalink: "title",
      * content: 'Lorem ipusm.'
      * date: 2023-09-06T22:23:59.146Z
-     * tags: {categoryData}}, ... ]
+     * tags: { name, id }}, ... ]
      */
-    static async getTaggedPosts(tag_id: string) : Promise<Array<TaggedPost>> {
+    static async getTaggedPosts(tag_id: string) : Promise<Array<Post>> {
         // console.debug("getTaggedPosts");
         const resp = await fetch(
             `${STRAPI_BASE_URL}categories/${tag_id}?${STAPI_RELATION_PARAM}`
@@ -104,9 +104,9 @@ class BlogApi {
      * content: 'Lorem ipusm.'
      * date: 2023-09-06T22:23:59.146Z,
      * canonical: "https://julianecassidy.com/blog/2",
-     * tags: ["test", "other"]}
+     * tags: { name, id }}
      */
-    static async getPost(id: string) : Promise<SinglePost> {
+    static async getPost(id: string) : Promise<Post> {
         // console.debug("getPost");
         const resp = await fetch(
             `${STRAPI_BASE_URL}personal-blogs/${id}?${STAPI_RELATION_PARAM}`);
@@ -132,9 +132,11 @@ class BlogApi {
     }
 
     /** Takes a UTC format date '2023-09-07T03:18:34.941Z' and returns it
-    * in the format "mm-dd-yyy" */
+    * in the format "dd Month yyyy" */
     static formatDate(UTCDate: string) : string {
-        const date = new Date(UTCDate).toLocaleDateString();
+        const date = new Date(UTCDate).toLocaleDateString(
+            'en-US',
+            {year: "numeric", month: "long", day: "numeric"});
         return date;
     }
 

@@ -1,0 +1,47 @@
+---
+import type { Tag } from "types";
+import Button from "./Button.astro";
+
+export interface Props {
+    id: number;
+    permalink: string;
+    title: string;
+    content: string;
+    date: string;
+    tags: Array<Tag>;
+}
+
+const { id, permalink, title, content, date, tags } = Astro.props;
+const contentSnippet = content.slice(0, 120);
+---
+
+<div class="blog-post-card">
+    <h2>{title}</h2>
+    <div class="blog-post-card-date">{date}</div>
+    <p>{contentSnippet}...</p>
+    <div class="blog-post-card-button">
+        <Button
+            href={`/blog/${id}/${permalink}`}
+            text="Read More"
+            className="sm:ml-auto"
+            ariaLabel={`${title}-read-more`}
+            title={`${title} Read More`}
+        />
+    </div>
+</div>
+
+<style>
+    .blog-post-card {
+        @apply w-[380px] h-[450px] border-2 border-border rounded-lg py-4 px-6
+        relative;
+    }
+    .blog-post-card h2 {
+        @apply text-4xl font-sans text-center mb-2;
+    }
+    .blog-post-card-date {
+        @apply mb-2 font-display uppercase text-center mb-3;
+    }
+    .blog-post-card-button {
+        @apply text-center absolute bottom-4 left-32;
+    }
+</style>

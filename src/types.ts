@@ -32,10 +32,12 @@ export type Experience = {
 
 export type Post = {
   id: number;
+  title: string;
   permalink: string;
   content: string;
   date: string;
   canonical: string;
+  tags: Array<Tag>
 }
 
 export type Tag = {
