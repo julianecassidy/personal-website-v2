@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Button from "./Button.astro";
 
 const MAX_CHAR = 300;
 

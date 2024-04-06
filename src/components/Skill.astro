@@ -21,13 +21,13 @@ const { name, svg, fill } = skill;
 
 <style>
     .skill {
-        @apply w-[95px] h-[95px];
+        @apply w-[95px] h-[95px] ;
     }
     .skill img {
         @apply w-[65px] h-[65px] relative top-[15px] m-auto;
     }
     .skill-text {
-        @apply invisible w-[95px] h-[95px] relative -top-[65px] bg-muted text-right
-        pt-[70px] pr-1 group-hover:visible;
+        @apply opacity-0 w-[95px] h-[95px] relative -top-[65px] bg-muted text-right
+        pt-[70px] pr-1 transition duration-200 ease-in-out group-hover:opacity-100;
     }
 </style>

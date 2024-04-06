@@ -38,7 +38,7 @@ const randomRhythms: Project = {
   ],
   demoUrl: "",
   githubUrl: "https://github.com/julianecassidy/randomrhythms",
-  slug: "randomrhythms",
+  slug: "",
   images: [""],
 };
 
@@ -57,8 +57,8 @@ const jobify: Project = {
   ],
   demoUrl: "https://jobify.julianecassidy.com/",
   githubUrl: "https://github.com/julianecassidy/react-jobify",
-  slug: "jobify",
-  images: [""],
+  slug: "",
+  images: ["jobify.png"],
 };
 
 const flitter: Project = {
@@ -75,8 +75,8 @@ const flitter: Project = {
   ],
   demoUrl: "https://flitter.julianecassidy.com/",
   githubUrl: "https://github.com/julianecassidy/flitter",
-  slug: "flitter",
-  images: [""],
+  slug: "",
+  images: ["flitter.png"],
 };
 
 const webDesign: Project = {
@@ -98,8 +98,8 @@ const webDesign: Project = {
   ],
   demoUrl: "",
   githubUrl: "",
-  slug: "web-design",
-  images: [""],
+  slug: "",
+  images: ["website.png"],
 };
 
 export const PROJECTS: Array<Project> = [
@@ -121,7 +121,7 @@ export const SKILLS: Array<Skill> = [
   {name: "TailwindCSS", svg: "tailwind.svg", fill: "#0f172a"},
   {name: "AWS", svg: "aws.svg", fill: "#f3f5f7"},
   {name: "Vite", svg: "vite.svg", fill: "#646cff"},
-  {name: "Astro", svg: "astro.svg", fill: "#291c42"},
+  {name: "Astro", svg: "astro.svg", fill: "#39286f"},
 ]
 
 const rithm: Experience = {

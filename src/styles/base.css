@@ -45,6 +45,9 @@
   h3 {
     @apply text-4xl;
   }
+  h4 {
+    @apply text-2xl;
+  }
   p {
     @apply mb-4;
   }
