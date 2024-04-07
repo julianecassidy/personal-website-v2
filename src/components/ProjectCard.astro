@@ -3,7 +3,6 @@ import type { Project } from "types";
 import LinkButton from "@components/LinkButton.astro";
 import Button from "@components/Button.astro";
 import Dots from "@components/Dots.astro";
-const DEFAULT_IMAGE = "";
 
 export interface Props {
     project: Project;
@@ -11,8 +10,14 @@ export interface Props {
 }
 
 const { project, idx } = Astro.props;
-const { title, description, languages, demoUrl, githubUrl, slug, images } =
-    project;
+const {
+    title,
+    description,
+    languages,
+    demoUrl,
+    githubUrl,
+    slug,
+    images } = project;
 
 const directionClass = idx % 2 === 0 ? "flex-row" : "flex-row-reverse";
 const dotColor = idx % 2 === 0 ? "#FCA311" : "#154F66";
@@ -23,7 +28,7 @@ const dotColor = idx % 2 === 0 ? "#FCA311" : "#154F66";
         <img
             class="project-img-src"
             src={images[0] ? `screenshots/${images[0]}` : "https://picsum.photos/450/350"}
-            alt=`${title} screenshot`
+            alt={images[0] ?`${title} screenshot` : "Randomly generated"}
         />
         <div class=`project-dots-${idx}`>
             <Dots dotColor={dotColor} />
