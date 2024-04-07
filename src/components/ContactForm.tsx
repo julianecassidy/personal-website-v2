@@ -23,7 +23,7 @@ export default function ContactForm() {
         : "text-accent text-xs text-right";
 
     const label = "font-serif text-md text-base";
-    const inputClass = `my-2 w-full box-border p-2 bg-muted opacity-50 border-2
+    const inputClass = `my-2 w-full box-border p-2 bg-muted opacity-1 border-2
         border-border rounded-md text-base focus:border-2`;
     const inputRequired = "text-accent";
     const buttonClass = "block mx-auto mt-4 bg-primary rounded px-2 py-2 text-center text-fill whitespace-nowrap;"
@@ -72,30 +72,36 @@ export default function ContactForm() {
           onSubmit={handleSubmit}
         >
             <input type="hidden" name="form-name" value="contact" />
-            <label className={label}>Name: <span className={inputRequired}>*</span></label>
+            <label htmlFor="name" className={label}>Name: <span className={inputRequired}>*</span></label>
             <input
                 type="text"
+                id="name"
                 name="name"
                 className={inputClass}
                 value={formData.name}
                 required
+                aria-label="name"
                 onChange={handleChange}
             />
-            <label className={label}>Email: <span className={inputRequired}>*</span></label>
+            <label htmlFor="email" className={label}>Email: <span className={inputRequired}>*</span></label>
             <input
                 type="email"
+                id="email"
                 name="email"
                 className={inputClass}
                 value={formData.email}
                 required
+                aria-label="email"
                 onChange={handleChange}
             />
-            <label className={label}>Message: <span className={inputRequired}>*</span></label>
+            <label htmlFor="messsage" className={label}>Message: <span className={inputRequired}>*</span></label>
             <textarea
                 name="message"
+                id="message"
                 className={inputClass}
                 value={formData.message}
                 required
+                aria-label="message"
                 onChange={handleChange}
             />
             <div className={charLimitClass}>
@@ -114,9 +120,9 @@ export default function ContactForm() {
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="#fffff7"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     className="inline-block ml-2 -rotate-180 transform transition-all group-hover:rotate-0"
                 ><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
                 </svg>

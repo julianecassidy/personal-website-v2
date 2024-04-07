@@ -3,9 +3,9 @@ import type { Site, Project, Skill, Experience, SocialObject } from "./types";
 export const SITE: Site = {
   website: "https://julianecassidy.com", // replace this with your deployed domain
   author: "Juliane Cassidy",
-  desc: "Front end software engineer.",
+  desc: "Software engineer experienced in React, TypeScript, Python, and web design.",
   title: "Juliane Cassidy | Software Engineer",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "headshot.jpg",
   lightAndDarkMode: true,
 };
 

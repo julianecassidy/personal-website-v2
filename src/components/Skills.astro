@@ -22,7 +22,7 @@ import Skill from "@components/Skill.astro"
         @apply flex flex-wrap gap-12 my-16 sm:flex-nowrap;
     }
     .skills-left {
-        @apply flex flex-wrap justify-center self-start sm:w-1/4 sm:mt-12;
+        @apply flex flex-wrap justify-center sm:self-start ml-24 sm:ml-16 md:ml-0 sm:w-1/4 sm:mt-12;
     }
     .skills-header {
         @apply text-center relative w-full sm:w-72 mx-auto mt-6 mb-12;
@@ -34,6 +34,6 @@ import Skill from "@components/Skill.astro"
         @apply bg-secondary w-28 sm:w-36 h-6 absolute bottom-2 -left-3 sm:right-0 z-10;
     }
     .skills-list {
-        @apply flex flex-wrap gap-12;
+        @apply flex flex-wrap justify-center gap-12;
     }
 </style>
