@@ -2,9 +2,10 @@
 import ContactForm from "@components/ContactForm";
 import Dots from "./Dots.astro";
 import LinkButton from "./LinkButton.astro";
+import { LINKEDIN, GITHUB } from "@config";
 
-const GITHUB_URL = "https://github.com/julianecassidy";
-const LINKEDIN_URL = "https://www.linkedin.com/in/julianemcassidy/";
+const GITHUB_URL = GITHUB.href;
+const LINKEDIN_URL = LINKEDIN.href;
 const MAIL_URL = "mailto:julianecassidy@gmail.com";
 ---
 
@@ -105,7 +106,7 @@ const MAIL_URL = "mailto:julianecassidy@gmail.com";
         @apply mb-8;
     }
     .contact-header {
-        @apply relative w-72 mx-auto mt-6 mb-12;
+        @apply text-center relative w-72 mx-auto mt-6 mb-12;
     }
     .contact-title {
         @apply relative z-20;
@@ -132,4 +133,3 @@ const MAIL_URL = "mailto:julianecassidy@gmail.com";
         @apply flex gap-16 justify-center mt-8;
     }
 </style>
-@components/homepage/ContactForm

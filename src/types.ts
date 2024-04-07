@@ -7,6 +7,18 @@ export type Site = {
   lightAndDarkMode: boolean;
 };
 
+export type SocialObject = {
+  name: SocialMedia;
+  href: string;
+  active: boolean;
+  linkTitle: string;
+};
+
+export type SocialMedia =
+  | "LinkedIn"
+  | "GitHub"
+  | "Medium";
+
 export type Project = {
   title: string;
   description: string;

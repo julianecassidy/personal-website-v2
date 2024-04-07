@@ -1,4 +1,4 @@
-import type { Site, Project, Skill, Experience } from "./types";
+import type { Site, Project, Skill, Experience, SocialObject } from "./types";
 
 export const SITE: Site = {
   website: "https://julianecassidy.com", // replace this with your deployed domain
@@ -20,6 +20,27 @@ export const LOGO_IMAGE = {
   width: 141,
   height: 78,
 };
+
+export const LINKEDIN: SocialObject = {
+    name: "LinkedIn",
+    href: "https://linkedin.com/julianemcassidy",
+    linkTitle: `Juliane on LinkedIn`,
+    active: true,
+}
+
+export const GITHUB: SocialObject = {
+    name: "GitHub",
+    href: "https://github.com/julianecassidy",
+    linkTitle: `Juliane on GitHub`,
+    active: true,
+}
+
+export const MEDIUM: SocialObject = {
+    name: "Medium",
+    href: "https://medium.com/@julianecassidy",
+    linkTitle: `Juliane on Medium`,
+    active: false,
+}
 
 const randomRhythms: Project = {
   title: "Random Rhythms",
