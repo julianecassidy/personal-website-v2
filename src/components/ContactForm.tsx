@@ -105,8 +105,8 @@ export default function ContactForm() {
             {formSubmitted && <div className={formSubmittedClass}>
                 <p>Thanks! I'll be in touch.</p>
             </div>}
-            <button className={`${buttonClass} group`}>
-                Send
+            <button className={`${buttonClass} group hover:bg-secondary`}>
+                send
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="18"
@@ -117,9 +117,9 @@ export default function ContactForm() {
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    className="-rotate-180 transform transition-all group-hover:rotate-0"
-                ><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg
-                >
+                    className="inline-block ml-2 -rotate-180 transform transition-all group-hover:rotate-0"
+                ><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
+                </svg>
             </button>
         </form>
     );

@@ -61,53 +61,9 @@
   footer {
     @apply mx-0 max-w-full;
   }
-  svg {
-    @apply inline-block h-6 w-6;
-  }
-  svg.icon-tabler {
-    @apply inline-block h-6 w-6 scale-125 fill-transparent
-    stroke-current stroke-2 opacity-90 group-hover:fill-transparent
-    sm:scale-110;
-  }
   ul {
     @apply list-disc pb-4;
   }
-  /* .prose {
-    @apply prose-headings:!mb-3 prose-headings:!text-base
-    prose-h3:italic prose-p:!text-base prose-blockquote:!border-l-accent
-    prose-blockquote:border-opacity-50 prose-blockquote:opacity-80
-    prose-figcaption:!text-base prose-figcaption:opacity-70
-    prose-strong:!text-base
-
-    prose-code:rounded prose-code:bg-card
-    prose-code:bg-opacity-75 prose-code:p-1
-    prose-code:before:!content-[''] prose-code:after:!content-['']
-    prose-ol:!text-base
-    prose-ul:overflow-x-clip prose-ul:!text-base prose-li:marker:!text-accent
-    prose-table:text-base prose-th:border
-    prose-th:border-line prose-td:border
-    prose-img:!mt-1 prose-img:border-2
-  } */
-  /* .prose thead th:first-child,
-  tbody td:first-child,
-  tfoot td:first-child {
-    padding-left: 0.5714286em;
-  }
-  .prose h2#table-of-contents {
-    @apply mb-2;
-  }
-  .prose details {
-    @apply inline-block cursor-pointer select-none text-base;
-  }
-  .prose summary {
-    @apply focus-outline;
-  }
-  .prose h2#table-of-contents + p {
-    @apply hidden;
-  }
-  .prose img {
-    @apply -mb-2;
-  } */
 
   /* ===== scrollbar ===== */
   html {
