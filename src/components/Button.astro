@@ -18,38 +18,35 @@ const {
 } = Astro.props;
 ---
 
-<button class=`${className} group`>
-    <a
-        href={disabled ? "#" : href}
-        tabindex={disabled ? "-1" : "0"}
-        aria-label={ariaLabel}
-        title={title}
-        aria-disabled={disabled}
-    >
+<a
+    href={disabled ? "#" : href}
+    tabindex={disabled ? "-1" : "0"}
+    aria-label={ariaLabel}
+    title={title}
+    aria-disabled={disabled}
+>
+    <button class=`${className} group`>
         {text}
-    </a>
-    <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="18"
-        height="18"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="#fffff7"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="-rotate-180 transform transition-all group-hover:rotate-0"
-        ><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg
-    >
-</button>
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#fffff7"
+            class="-rotate-180 transform transition-all group-hover:rotate-0"
+            ><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg
+        >
+    </button>
+</a>
 
 <style>
     button {
-        @apply bg-primary rounded px-2 py-2 text-center whitespace-nowrap
+        @apply bg-button rounded px-3 py-3 text-center lowercase whitespace-nowrap
         hover:bg-secondary;
     }
     a {
-        @apply text-fill lowercase no-underline;
+        @apply text-white no-underline;
     }
     svg {
         @apply inline-block;

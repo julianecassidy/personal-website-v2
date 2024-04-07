@@ -24,7 +24,9 @@ export default {
         fill: withOpacity("--color-fill"),
         base: withOpacity("--color-base"),
         border: withOpacity("--color-border"),
-        muted: withOpacity("--color-muted")
+        muted: withOpacity("--color-muted"),
+        button: withOpacity("--color-button"),
+        white: withOpacity("--color-white"),
       },
       fontFamily: {
         sans: ["Raleway", "Arial", "sans-serif"],

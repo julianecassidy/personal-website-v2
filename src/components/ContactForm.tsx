@@ -24,9 +24,9 @@ export default function ContactForm() {
 
     const label = "font-serif text-md text-base";
     const inputClass = `my-2 w-full box-border p-2 bg-muted opacity-1 border-2
-        border-border rounded-md text-base focus:border-2`;
+        border-border rounded-md text-[#01161e] focus:border-2`;
     const inputRequired = "text-accent";
-    const buttonClass = "block mx-auto mt-4 bg-primary rounded px-2 py-2 text-center text-fill whitespace-nowrap;"
+    const buttonClass = "block mx-auto mt-4 bg-button rounded px-2 py-2 text-center text-white whitespace-nowrap;"
     const formErrorClass = "p-2 bg-muted";
     const formSubmittedClass = "text-center"
 

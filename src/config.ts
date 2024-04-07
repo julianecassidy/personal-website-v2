@@ -5,7 +5,7 @@ export const SITE: Site = {
   author: "Juliane Cassidy",
   desc: "Software engineer experienced in React, TypeScript, Python, and web design.",
   title: "Juliane Cassidy | Software Engineer",
-  ogImage: "headshot.jpg",
+  ogImage: "https://julianecassidy.com/headshot.jpg",
   lightAndDarkMode: true,
 };
 
