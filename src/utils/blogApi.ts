@@ -21,29 +21,33 @@ class BlogApi {
      */
     static async getPosts() : Promise<Array<Post>> {
         // console.debug("getPosts");
-        const resp = await fetch(
-            `${STRAPI_BASE_URL}personal-blogs?${STRAPI_SORT_PARAM}&${STAPI_RELATION_PARAM}`
-        );
-        const postData = await resp.json();
-        const posts = postData.data.map((post: any) => {
-            const data = {
-                id: post.id,
-                title: post.attributes.Title,
-                permalink: post.attributes.Permalink,
-                content: post.attributes.Content,
-                date: post.attributes.publishedAt,
-                tags: post.attributes.categories.data.map((category: any) =>{
-                    const tag = {
-                        name: category.attributes.Tag,
-                        id: category.id,
-                    }
-                    return tag;
-                }),
-            };
-            return data;
-        })
-
-        return posts;
+        try {
+            const resp = await fetch(
+                `${STRAPI_BASE_URL}personal-blogs?${STRAPI_SORT_PARAM}&${STAPI_RELATION_PARAM}`
+            );
+            const postData = await resp.json();
+            const posts = postData.data.map((post: any) => {
+                const data = {
+                    id: post.id,
+                    title: post.attributes.Title,
+                    permalink: post.attributes.Permalink,
+                    content: post.attributes.Content,
+                    date: post.attributes.publishedAt,
+                    tags: post.attributes.categories.data.map((category: any) =>{
+                        const tag = {
+                            name: category.attributes.Tag,
+                            id: category.id,
+                        }
+                        return tag;
+                    }),
+                };
+                return data;
+            })
+            return posts;
+        } catch (err) {
+            console.log(err);
+            return [];
+        }
     }
 
     /** Make an API get request to Strapi to get all tags. Returns an array of
@@ -53,17 +57,22 @@ class BlogApi {
      */
     static async getTags() : Promise<Array<Tag>> {
         // console.debug("getTags");
-        const resp = await fetch(`${STRAPI_BASE_URL}categories`);
-        const tagData = await resp.json();
-        const tags = tagData.data.map((tag: any) => {
-            const data = {
-                id: tag.id,
-                name: tag.attributes.Tag,
-            };
-            return data;
-        })
+        try {
+            const resp = await fetch(`${STRAPI_BASE_URL}categories`);
+            const tagData = await resp.json();
+            const tags = tagData.data.map((tag: any) => {
+                const data = {
+                    id: tag.id,
+                    name: tag.attributes.Tag,
+                };
+                return data;
+            })
 
-        return tags;
+            return tags;
+        } catch (err) {
+            console.log(err);
+            return [];
+        }
     }
 
     /** Make an API get request to Strapi to get all blog posts with the given
@@ -76,23 +85,28 @@ class BlogApi {
      */
     static async getTaggedPosts(tag_id: number) : Promise<Array<Post>> {
         // console.debug("getTaggedPosts");
-        const resp = await fetch(
-            `${STRAPI_BASE_URL}categories/${tag_id}?${STAPI_RELATION_PARAM}`
-        );
-        const postsData = await resp.json();
+        try {
+            const resp = await fetch(
+                `${STRAPI_BASE_URL}categories/${tag_id}?${STAPI_RELATION_PARAM}`
+            );
+            const postsData = await resp.json();
 
-        const posts = postsData.data.attributes.personal_blogs.data.map((post: any) => {
-            const data = {
-                id: post.id,
-                title: post.attributes.Title,
-                permalink: post.attributes.Permalink,
-                content: post.attributes.Content,
-                date: post.attributes.publishedAt,
-            };
-            return data;
-        })
+            const posts = postsData.data.attributes.personal_blogs.data.map((post: any) => {
+                const data = {
+                    id: post.id,
+                    title: post.attributes.Title,
+                    permalink: post.attributes.Permalink,
+                    content: post.attributes.Content,
+                    date: post.attributes.publishedAt,
+                };
+                return data;
+            })
 
-        return posts;
+            return posts;
+        } catch (err) {
+            console.log(err);
+            return [];
+        }
     }
 
     /** Make an API get request to Strapi to get a single blog post by id.
