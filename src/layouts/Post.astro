@@ -13,7 +13,7 @@ const tags = await BlogApi.getTags();
         <h4>Explore More</h4>
         <ul>
             {tags.map(tag => (
-                <a href={`/blog/tags/${tag.id}/${tag.name}`}><li>{tag.name}</li></a>
+                <a href={`/tags/${tag.id}-${tag.name}`}><li>{tag.name}</li></a>
             ))}
         </ul>
     </div>
@@ -34,7 +34,7 @@ const tags = await BlogApi.getTags();
         @apply text-primary;
     }
     .blog-tags ul {
-        @apply pt-4;
+        @apply list-none pt-4;
     }
     .blog-tags li {
         @apply py-1 hover:text-base;

@@ -72,10 +72,9 @@ class BlogApi {
      * title: "Title",
      * permalink: "title",
      * content: 'Lorem ipusm.'
-     * date: 2023-09-06T22:23:59.146Z
-     * tags: { name, id }}, ... ]
+     * date: 2023-09-06T22:23:59.146Z, ... ]
      */
-    static async getTaggedPosts(tag_id: string) : Promise<Array<Post>> {
+    static async getTaggedPosts(tag_id: number) : Promise<Array<Post>> {
         // console.debug("getTaggedPosts");
         const resp = await fetch(
             `${STRAPI_BASE_URL}categories/${tag_id}?${STAPI_RELATION_PARAM}`
@@ -89,7 +88,7 @@ class BlogApi {
                 permalink: post.attributes.Permalink,
                 content: post.attributes.Content,
                 date: post.attributes.publishedAt,
-                };
+            };
             return data;
         })
 
@@ -106,7 +105,7 @@ class BlogApi {
      * canonical: "https://julianecassidy.com/blog/2",
      * tags: { name, id }}
      */
-    static async getPost(id: string) : Promise<Post> {
+    static async getPost(id: number) : Promise<Post> {
         // console.debug("getPost");
         const resp = await fetch(
             `${STRAPI_BASE_URL}personal-blogs/${id}?${STAPI_RELATION_PARAM}`);

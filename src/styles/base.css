@@ -34,7 +34,7 @@
     display: block;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif text-center tracking-wider text-base;
+    @apply font-serif tracking-wider text-base my-4;
   }
   h1 {
     @apply text-3xl sm:text-7xl md:text-8xl;
@@ -69,13 +69,15 @@
     stroke-current stroke-2 opacity-90 group-hover:fill-transparent
     sm:scale-110;
   }
-  .prose {
+  ul {
+    @apply list-disc pb-4;
+  }
+  /* .prose {
     @apply prose-headings:!mb-3 prose-headings:!text-base
     prose-h3:italic prose-p:!text-base prose-blockquote:!border-l-accent
     prose-blockquote:border-opacity-50 prose-blockquote:opacity-80
     prose-figcaption:!text-base prose-figcaption:opacity-70
     prose-strong:!text-base
-
 
     prose-code:rounded prose-code:bg-card
     prose-code:bg-opacity-75 prose-code:p-1
@@ -85,8 +87,8 @@
     prose-table:text-base prose-th:border
     prose-th:border-line prose-td:border
     prose-img:!mt-1 prose-img:border-2
-  }
-  .prose thead th:first-child,
+  } */
+  /* .prose thead th:first-child,
   tbody td:first-child,
   tfoot td:first-child {
     padding-left: 0.5714286em;
@@ -105,7 +107,7 @@
   }
   .prose img {
     @apply -mb-2;
-  }
+  } */
 
   /* ===== scrollbar ===== */
   html {

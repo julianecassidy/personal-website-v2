@@ -1,0 +1,54 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Main from "@layouts/Main.astro";
+import Post from "@layouts/Post.astro";
+import Header from "@components/Header.astro";
+import { BlogApi } from "@utils/blogApi";
+import { marked } from 'marked';
+
+export async function getStaticPaths() {
+    const posts = await BlogApi.getPosts()
+
+  return posts.map(p => {
+    return {
+      params: { id: p.id, slug: p.permalink },
+    };
+  });
+}
+
+const { id } = Astro.params;
+
+const post = await BlogApi.getPost(id);
+post.date = BlogApi.formatDate(post.date);
+post.content = await marked.parse(post.content);
+
+const metaDescription = post.content.slice(0, 140);
+
+let tagList = "";
+for (let tag of post.tags) {
+    tagList += tag.name;
+}
+
+---
+
+<Layout title={post.title} canonicalURL={post.canonical} description={metaDescription}>
+    <Main>
+        <Header
+          accentText={post.date}
+          pageTitle={post.title}
+          pageDesc={`tags: ${tagList}`}
+        />
+        <Post>
+            <article id="blog-post" set:html={post.content} />
+        </Post>
+    </Main>
+</Layout>
+
+<style>
+    #blog-post {
+        @apply mx-24;
+    }
+    #blog-post ul {
+        @apply list-disc pb-4;
+    }
+</style>

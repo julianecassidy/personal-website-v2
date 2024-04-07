@@ -1,38 +1,45 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/Main.astro";
-import Post from "@layouts/Post.astro";
 import Header from "@components/Header.astro";
+import Post from "@layouts/Post.astro";
 import BlogPostCard from "@components/BlogPostCard.astro";
 import { BlogApi } from "@utils/blogApi";
 
-const pageTitle = "Blog";
-const pageDesc = `follow along with what I’m learning, apps I’m building,
-and other thoughts, both technical and not`;
+export async function getStaticPaths() {
+    const tags = await BlogApi.getTags()
 
-const postData = await BlogApi.getPosts();
-const posts = postData.map((post) => ({
+  return tags.map(t => {
+    return {
+      params: {id: t.id, tag: t.name},
+    };
+  });
+}
+
+const { id, tag } = Astro.params;
+
+const taggedPostData = await BlogApi.getTaggedPosts(id);
+const taggedPosts = taggedPostData.map((post) => ({
     ...post,
     date: BlogApi.formatDate(post.date),
 }));
 
 ---
 
-<Layout title="Juliane Cassidy">
+<Layout title=`Posts tagged: ${tag}`>
     <Main>
-        <Header pageTitle={pageTitle} pageDesc={pageDesc} />
+        <Header accentText={"Posts tagged:"} pageTitle={tag} />
         <Post>
-            {posts.length === 0
+            {taggedPosts.length === 0
                 ? <div class="blog-no-posts"><p>No posts to display.</p></div>
                 : <div class="blog-posts">
-                    {posts.map(post =>
+                    {taggedPosts.map(post =>
                         <BlogPostCard
                             id={post.id}
                             permalink={post.permalink}
                             title={post.title}
                             content={post.content}
                             date={post.date}
-                            tags={post.tags}
                         />
                     )}
                 </div>
@@ -45,5 +52,4 @@ const posts = postData.map((post) => ({
     .blog-posts {
         @apply flex flex-wrap gap-16 justify-center;
     }
-
 </style>
