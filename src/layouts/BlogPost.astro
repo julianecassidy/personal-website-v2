@@ -1,4 +1,5 @@
 ---
+import type { Tag } from "../types";
 import { BlogApi } from "@utils/blogApi";
 
 const tags = await BlogApi.getTags();
@@ -12,7 +13,7 @@ const tags = await BlogApi.getTags();
     <div class="blog-tags">
         <h4>Explore More</h4>
         <ul>
-            {tags.map(tag => (
+            {tags.map((tag: Tag) => (
                 <a href={`/tags/${tag.id}-${tag.name}`}><li>{tag.name}</li></a>
             ))}
         </ul>

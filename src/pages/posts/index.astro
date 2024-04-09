@@ -1,7 +1,8 @@
 ---
+import type { Post } from "../../types";
 import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/Main.astro";
-import Post from "@layouts/Post.astro";
+import BlogPost from "@layouts/BlogPost.astro";
 import Header from "@components/Header.astro";
 import BlogPostCard from "@components/BlogPostCard.astro";
 import { BlogApi } from "@utils/blogApi";
@@ -11,7 +12,7 @@ const pageDesc = `follow along with what I’m learning, apps I’m building,
 and other thoughts, both technical and not`;
 
 const postData = await BlogApi.getPosts();
-const posts = postData.map((post) => ({
+const posts = postData.map((post: Post) => ({
     ...post,
     date: BlogApi.formatDate(post.date),
 }));
@@ -21,11 +22,11 @@ const posts = postData.map((post) => ({
 <Layout title="Juliane Cassidy | Blog">
     <Main>
         <Header pageTitle={pageTitle} pageDesc={pageDesc} />
-        <Post>
+        <BlogPost>
             {posts.length === 0
                 ? <div class="blog-no-posts"><p>No posts to display.</p></div>
                 : <div class="blog-posts">
-                    {posts.map(post =>
+                    {posts.map((post: Post) =>
                         <BlogPostCard
                             id={post.id}
                             permalink={post.permalink}
@@ -37,7 +38,7 @@ const posts = postData.map((post) => ({
                     )}
                 </div>
             }
-        </Post>
+        </BlogPost>
     </Main>
 </Layout>
 

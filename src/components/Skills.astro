@@ -1,6 +1,7 @@
 ---
+import type { Skill } from "../types";
 import { SKILLS } from "@config";
-import Skill from "@components/Skill.astro"
+import SkillCard from "@components/SkillCard.astro"
 
 ---
 <section id="skills">
@@ -13,7 +14,7 @@ import Skill from "@components/Skill.astro"
         </div>
         </div>
     <div class="skills-list">
-        {SKILLS.map(s => <Skill skill={s} />)}
+        {SKILLS.map((s: Skill) => <SkillCard skill={s} />)}
     </div>
 </section>
 

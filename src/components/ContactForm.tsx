@@ -120,8 +120,8 @@ export default function ContactForm() {
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="#fffff7"
-                    strokeWidth="2"
-                    strokeLinecap="round"
+                    stroke-width="2"
+                    stroke-linecap="round"
                     strokeLinejoin="round"
                     className="inline-block ml-2 -rotate-180 transform transition-all group-hover:rotate-0"
                 ><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
