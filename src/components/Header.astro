@@ -3,9 +3,10 @@ export interface Props {
     pageTitle: string;
     pageDesc?: string;
     accentText?: string;
+    titleCustomClass?: string;
 }
 
-const { pageTitle, pageDesc, accentText } = Astro.props;
+const { pageTitle, pageDesc, accentText, titleCustomClass } = Astro.props;
 const formattedTitle = "{ " + pageTitle.toLowerCase() + " }";
 const formattedAccent = accentText?.toLowerCase();
 ---
@@ -13,7 +14,7 @@ const formattedAccent = accentText?.toLowerCase();
 <header>
     <div class="header">
         {accentText && <div class="header-accent">{formattedAccent}</div>}
-        <div class="header-title">
+        <div class={titleCustomClass ? titleCustomClass : "header-title"}>
             <h1>{formattedTitle}</h1>
         </div>
         <hr />
@@ -25,7 +26,7 @@ const formattedAccent = accentText?.toLowerCase();
 
 <style>
     .header {
-        @apply flex flex-wrap content-center mx-8 mt-16 my-24;
+        @apply flex flex-wrap content-center mx-12 mt-16 my-24 sm:mx-24;
     }
     .header-title {
         @apply w-11/12 text-center my-5 mx-auto whitespace-nowrap;

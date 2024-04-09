@@ -24,11 +24,12 @@ post.date = BlogApi.formatDate(post.date);
 post.content = await marked.parse(post.content);
 
 const metaDescription = post.content.slice(0, 140);
-
-let tagList = "";
+let tagList = [];
 for (let tag of post.tags) {
-    tagList += tag.name;
+  tagList.push(tag.name);
 }
+
+console.log(Object.values(post.tags));
 
 ---
 
@@ -37,7 +38,8 @@ for (let tag of post.tags) {
         <Header
           accentText={post.date}
           pageTitle={post.title}
-          pageDesc={`tags: ${tagList}`}
+          pageDesc={`tags: ${tagList.join(", ")}`}
+          titleCustomClass="w-11/12 text-center my-5 mx-auto"
         />
         <BlogPost>
             <article id="blog-post" set:html={post.content} />

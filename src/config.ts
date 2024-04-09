@@ -23,7 +23,7 @@ export const LOGO_IMAGE = {
 
 export const LINKEDIN: SocialObject = {
     name: "LinkedIn",
-    href: "https://linkedin.com/julianemcassidy",
+    href: "https://www.linkedin.com/in/julianemcassidy/",
     linkTitle: `Juliane on LinkedIn`,
     active: true,
 }
