@@ -14,5 +14,12 @@ export default defineConfig({
       exclude: ["@resvg/resvg-js"]
     }
   },
+  redirects: {
+    '/home': '/',
+    '/blog': '/posts/',
+    '/about': '/#about',
+    "/blog/[...id]/[...slug]": "/posts/[...id]-[...slug]",
+    '/blog/tags/[...id]/[...tag]': '/tags/[...id]-[...tag]',
+  },
   scopedStyleStrategy: "where"
 });
