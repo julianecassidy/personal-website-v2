@@ -46,7 +46,8 @@ const randomRhythms: Project = {
   title: "Random Rhythms",
   description: `Explore local concerts in new genres. This full stack app relies
     on several APIs to collect concert data and provides random concert suggestions
-    based on distance and price.`,
+    based on distance and price. | Demo email: guest@guest.com | Demo
+    password: password`,
   languages: [
     "TypeScript",
     "React",
@@ -57,15 +58,15 @@ const randomRhythms: Project = {
     "Express",
     "PostgreSQL"
   ],
-  demoUrl: "",
+  demoUrl: "https://randomrhythms.netlify.app/",
   githubUrl: "https://github.com/julianecassidy/randomrhythms",
   slug: "",
-  images: [""],
+  images: ["randomrhythms.png"],
 };
 
 const jobify: Project = {
   title: "Jobify",
-  description: `A full stack, job finding website with a that lets users create
+  description: `A full stack, job finding website that lets users create
   accounts to view companies and available jobs. | Demo username: guest | Demo
   password: password`,
   languages: [
