@@ -18,7 +18,6 @@ export default defineConfig({
     '/home': '/',
     '/blog': '/posts/',
     '/about': '/#about',
-    "/blog/[...id]/[...slug]": "/posts/[...id]-[...slug]",
   },
   scopedStyleStrategy: "where"
 });
