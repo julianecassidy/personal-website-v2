@@ -19,7 +19,6 @@ export default defineConfig({
     '/blog': '/posts/',
     '/about': '/#about',
     "/blog/[...id]/[...slug]": "/posts/[...id]-[...slug]",
-    '/blog/tags/[...id]/[...tag]': '/tags/[...id]-[...tag]',
   },
   scopedStyleStrategy: "where"
 });
