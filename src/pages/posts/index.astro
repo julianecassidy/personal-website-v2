@@ -21,7 +21,7 @@ const posts = postData.map((post: Post) => ({
 
 <Layout title="Juliane Cassidy | Blog">
     <Main>
-        <Header pageTitle={pageTitle} pageDesc={pageDesc} />
+        <Header pageTitle={pageTitle} pageDesc={pageDesc} titleCustomClass="whitespace-wrap" />
         <BlogPost>
             {posts.length === 0
                 ? <div class="blog-no-posts"><p>No posts to display.</p></div>

@@ -26,9 +26,9 @@ export default function ContactForm() {
     const inputClass = `my-2 w-full box-border p-2 bg-muted opacity-1 border-2
         border-border rounded-md text-[#01161e] focus:border-2`;
     const inputRequired = "text-accent";
-    const buttonClass = "block mx-auto mt-4 bg-button rounded px-2 py-2 text-center text-white whitespace-nowrap;"
+    const buttonClass = "block mx-auto mt-4 bg-button rounded px-2 py-2 text-center text-white whitespace-nowrap";
     const formErrorClass = "p-2 bg-muted";
-    const formSubmittedClass = "text-center"
+    const formSubmittedClass = "text-center";
 
     /** Update form input. */
     function handleChange(evt: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
@@ -120,8 +120,8 @@ export default function ContactForm() {
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="#fffff7"
-                    stroke-width="2"
-                    stroke-linecap="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
                     strokeLinejoin="round"
                     className="inline-block ml-2 -rotate-180 transform transition-all group-hover:rotate-0"
                 ><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>

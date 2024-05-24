@@ -117,6 +117,8 @@ const webDesign: Project = {
     "Tailwind CSS",
     "Bootstrap",
     "Figma",
+    "Sanity",
+    "Strapi",
   ],
   demoUrl: "",
   githubUrl: "",
