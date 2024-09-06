@@ -151,9 +151,9 @@ export const SKILLS: Array<Skill> = [
 const rithm: Experience = {
   role: "Software Engineer and Teaching Assistant",
   company: "Rithm School",
-  timeSpan: "Jun 2023 - Present",
-  description: `Teaching a fast-paced full stack development curriculum over
-    16 weeks. Also working on a Django student management system and maintaining
+  timeSpan: "Jun 2023 - July 2024",
+  description: `Taught a fast-paced full stack development curriculum over
+    16 weeks. Also worked on a Django white-label student management system and maintained
     a constantly-changing curriculum.`
 }
 
