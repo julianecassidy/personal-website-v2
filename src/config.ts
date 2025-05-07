@@ -48,17 +48,16 @@ const inco: Project = {
   Lesbians Who Tech Conference Bingo Game.`,
   languages: ["React", "JavaScript", "Bootstrap"],
   demoUrl: "https://incocollective.com",
-  githubUrl: "https://github.com/lwt_games",
+  githubUrl: "https://github.com/LWTGames/InCo_Website",
   slug: "",
-  images: ["randomrhythms.png"],
+  images: ["inco.png"],
 };
 
 const randomRhythms: Project = {
   title: "Random Rhythms",
   description: `Explore local concerts in new genres. This full stack app relies
     on several APIs to collect concert data and provides random concert suggestions
-    based on distance and price. | Demo email: guest@guest.com | Demo
-    password: password`,
+    based on distance and price.`,
   languages: [
     "TypeScript",
     "React",
@@ -109,7 +108,7 @@ const webDesign: Project = {
   title: "Web Design",
   description: `Experienced in web development and SEO, I build websites for small
     businesses and individual portfolios. I can design, build, and write content
-    for a fast and beautiful site.`,
+    for a fast and modern site.`,
   languages: [
     "TypeScript",
     "JavaScript",
@@ -127,7 +126,7 @@ const webDesign: Project = {
   demoUrl: "",
   githubUrl: "",
   slug: "",
-  images: ["website.png"],
+  images: ["teach-fcs.png"],
 };
 
 export const PROJECTS: Array<Project> = [
