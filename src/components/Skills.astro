@@ -10,7 +10,7 @@ import SkillCard from "@components/SkillCard.astro";
       <div class="skills-title">
         <h3>Skills</h3>
       </div>
-      <div class="skills-title-line"></div>
+      <div class="skills-title-line title-line-parallax" data-speed="0.2"></div>
     </div>
   </div>
   <div class="skills-list">
@@ -32,7 +32,7 @@ import SkillCard from "@components/SkillCard.astro";
     @apply relative z-20;
   }
   .skills-title-line {
-    @apply bg-secondary w-28 sm:w-36 h-6 absolute bottom-2 -left-3 sm:right-0 z-10;
+    @apply bg-secondary w-28 sm:w-36 h-6 absolute bottom-2 -left-20 sm:right-0 z-10;
   }
   .skills-list {
     @apply flex flex-wrap justify-center gap-12;

@@ -11,7 +11,7 @@ import Button from "@components/Button.astro";
       <div class="experience-title">
         <h3>Experience</h3>
       </div>
-      <div class="experience-title-line"></div>
+      <div class="experience-title-line title-line-parallax" data-speed="0.2"></div>
     </div>
     <Button
       href="resume.pdf"
@@ -40,6 +40,6 @@ import Button from "@components/Button.astro";
     @apply relative z-20;
   }
   .experience-title-line {
-    @apply bg-secondary w-28 sm:w-36 h-6 absolute bottom-1 left-0 sm:right-0 z-10;
+    @apply bg-secondary w-28 sm:w-36 h-6 absolute bottom-1 -left-32 z-10;
   }
 </style>

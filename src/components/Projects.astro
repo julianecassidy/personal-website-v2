@@ -9,7 +9,7 @@ import ProjectCard from "@components/ProjectCard.astro";
     <div class="projects-title">
       <h2>Projects</h2>
     </div>
-    <div class="projects-title-line"></div>
+    <div class="projects-title-line title-line-parallax" data-speed="0.2"></div>
   </div>
   <div class="projects-list">
     {
@@ -28,7 +28,7 @@ import ProjectCard from "@components/ProjectCard.astro";
     @apply relative z-20;
   }
   .projects-title-line {
-    @apply bg-accent w-28 sm:w-36 h-6 absolute -bottom-2 right-6 sm:right-0 z-10;
+    @apply bg-accent w-28 sm:w-36 h-6 absolute -bottom-2 right-8 z-10;
   }
   .projects-list {
     @apply mt-10;

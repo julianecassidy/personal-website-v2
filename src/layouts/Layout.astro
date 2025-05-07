@@ -66,6 +66,13 @@ const googleMetaTag = googleSiteVerification
           const yOffset = (window.scrollY * speed) / 6;
           el.style.transform = `translateY(${yOffset}px)`;
         });
+
+        const lines = document.querySelectorAll(".title-line-parallax");
+        lines.forEach((el) => {
+          const speed = parseFloat(el.dataset.speed) || 0.2;
+          const xOffset = (window.scrollY * speed) / 6;
+          el.style.transform = `translateX(${xOffset}px)`;
+        });
       });
     </script>
   </head>

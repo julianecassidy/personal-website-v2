@@ -7,7 +7,7 @@ import Dots from "./Dots.astro";
     <div class="about-title">
       <h2>About</h2>
     </div>
-    <div class="about-title-line"></div>
+    <div class="about-title-line title-line-parallax" data-speed="0.2"></div>
   </div>
   <div class="about-body">
     <div class="about-image">
@@ -56,7 +56,7 @@ import Dots from "./Dots.astro";
     @apply relative z-20;
   }
   .about-title-line {
-    @apply bg-accent w-28 sm:w-36 h-6 absolute -bottom-2 right-6 sm:right-0 z-10;
+    @apply bg-accent w-28 sm:w-36 h-6 absolute -bottom-2 left-8 sm:right-0 z-10;
   }
   .about-body {
     @apply flex flex-wrap gap-x-8 md:gap-x-16 justify-center sm:justify-start sm:flex-nowrap;

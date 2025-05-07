@@ -79,7 +79,7 @@
   .fill-svgs {
     @apply fill-primary group-hover:fill-secondary transition duration-100 ease-in-out;
   }
-  .dots-parallax {
+  .dots-parallax, .title-line-parallax {
     will-change: transform;
     transition: transform 0.1s ease-out;
   }
