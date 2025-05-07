@@ -40,6 +40,7 @@ export type Experience = {
   company: string;
   timeSpan: string;
   description: string;
+  highlights: string[];
 }
 
 export type Post = {

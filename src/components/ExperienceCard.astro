@@ -10,7 +10,8 @@ const {
     role,
     company,
     timeSpan,
-    description
+    description,
+    highlights
 } = experience;
 
 ---
@@ -19,6 +20,13 @@ const {
     <div class="experience-timeSpan">{timeSpan}</div>
     <div class="experience-company">{company}</div>
     <div class="experience-desrciption">{description}</div>
+    <div class="experience-highlights">
+        Impact
+    {highlights.map((highlight) => (
+            <ul>
+        <li>{highlight}</li>
+    </ul>))}
+        </div>
 </div>
 
 <style>
@@ -36,6 +44,12 @@ const {
         @apply font-sans text-lg text-left w-full mb-2;
     }
     .experience-description {
-        @apply w-full;
+        @apply w-full mb-8;
+    }
+    .experience-highlights {
+        @apply font-bold mt-4;
+    }
+    .experience-highlights ul {
+        @apply text-sm font-normal list-inside pb-1;
     }
 </style>
