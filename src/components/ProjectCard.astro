@@ -26,7 +26,7 @@ const dotColor = idx % 2 === 0 ? "#FCA311" : "#154F66";
         : "https://picsum.photos/450/350"}
       alt={images[0] ? `${title} screenshot` : "Randomly generated"}
     />
-    <div class=`project-dots-${idx}`>
+    <div class=`project-dots-${idx} dots-parallax` data-speed="0.2">
       <Dots dotColor={dotColor} />
     </div>
   </div>
@@ -106,7 +106,7 @@ const dotColor = idx % 2 === 0 ? "#FCA311" : "#154F66";
             className="sm:ml-auto"
             ariaLabel={`${title}-read-more`}
             title={`${title} Read More`}
-          ></Button>
+          />
         )
       }
     </div>
@@ -125,16 +125,16 @@ const dotColor = idx % 2 === 0 ? "#FCA311" : "#154F66";
     @apply relative z-10 border-2 border-border;
   }
   .project-dots-0 {
-    @apply hidden sm:block absolute -top-5 -left-7 z-0;
+    @apply hidden sm:block absolute -top-10 -left-7 z-0;
   }
   .project-dots-1 {
-    @apply hidden sm:block absolute -bottom-5 -right-7 z-0;
+    @apply hidden sm:block absolute bottom-5 -right-7 z-0;
   }
   .project-dots-2 {
-    @apply hidden sm:block absolute -bottom-5 -left-7 z-0;
+    @apply hidden sm:block absolute bottom-5 -left-7 z-0;
   }
   .project-dots-3 {
-    @apply hidden sm:block absolute -top-5 -right-7 z-0;
+    @apply hidden sm:block absolute -top-16 -right-7 z-0;
   }
   .project-content {
     @apply w-10/12 sm:w-1/2;

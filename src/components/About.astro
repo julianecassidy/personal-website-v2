@@ -12,7 +12,7 @@ import Dots from "./Dots.astro";
   <div class="about-body">
     <div class="about-image">
       <img class="about-img-src" src="/headshot.jpg" alt="Juliane Cassidy" />
-      <div class="about-dots">
+      <div class="about-dots dots-parallax" data-speed="0.2">
         <Dots dotColor={"#FCA311"} />
       </div>
     </div>
@@ -68,6 +68,6 @@ import Dots from "./Dots.astro";
     @apply max-w-72 relative z-10;
   }
   .about-dots {
-    @apply hidden sm:block absolute bottom-28 md:bottom-16 -right-7 z-0;
+    @apply hidden sm:block absolute bottom-32 md:bottom-36 -right-5 md:-right-7 z-0;
   }
 </style>

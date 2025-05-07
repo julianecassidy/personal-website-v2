@@ -58,6 +58,16 @@ const googleMetaTag = googleSiteVerification
     {googleMetaTag}
 
     <script is:inline src="/toggle-theme.js"></script>
+    <script is:inline>
+      window.addEventListener("scroll", () => {
+        const dots = document.querySelectorAll(".dots-parallax");
+        dots.forEach((el) => {
+          const speed = parseFloat(el.dataset.speed) || 0.2;
+          const yOffset = (window.scrollY * speed) / 6;
+          el.style.transform = `translateY(${yOffset}px)`;
+        });
+      });
+    </script>
   </head>
   <body>
     <!-- A little help for the Netlify post-processing bots -->
