@@ -68,6 +68,12 @@
   ul {
     @apply list-disc pb-4;
   }
+  .path-svgs {
+    @apply stroke-primary group-hover:stroke-secondary transition duration-100 ease-in-out;
+  }
+  .fill-svgs {
+    @apply fill-primary group-hover:fill-secondary transition duration-100 ease-in-out;
+  }
 
   /* ===== scrollbar ===== */
   html {
