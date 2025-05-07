@@ -13,89 +13,89 @@ const MAIL_URL = "mailto:julianecassidy@gmail.com";
 ---
 
 <section id="contact">
-    <div class="contact-header">
-        <div class="contact-title">
-            <h2>Get In Touch</h2>
-        </div>
-        <div class="contact-title-line"></div>
+  <div class="contact-header">
+    <div class="contact-title">
+      <h2>Get In Touch</h2>
     </div>
-    <div class="contact-body">
-        <div class="contact-left">
-            <div class="contact-dots">
-                <Dots dotColor={"#FCA311"} />
-            </div>
-            <div class="contact-form">
-                <ContactForm client:load />
-            </div>
-        </div>
-        <div class="contact-content">
-            <p>
-                Want to talk about opportunities, collaborate on a project, or
-                discuss changing careers? Send me a message or reach out to me
-                through the links below.
-            </p>
-            <div class="contact-links">
-                <LinkButton
-                    href={MAIL_URL}
-                    className="focus-outline p-3 sm:p-1"
-                    ariaLabel={"email"}
-                    title={"Email Me"}
-                >
-                   <MailIcon />
-                </LinkButton>
-                <LinkButton
-                    href={LINKEDIN_URL}
-                    className="focus-outline p-3 sm:p-1"
-                    ariaLabel={"linkedin"}
-                    title={"LinkedIn"}
-                >
-                   <LinkedInIcon />
-                </LinkButton>
-                <LinkButton
-                    href={GITHUB_URL}
-                    className="focus-outline p-3 sm:p-1"
-                    ariaLabel={"github"}
-                    title={"Github"}
-                >
-                    <GithubIcon />
-                </LinkButton>
-            </div>
-        </div>
+    <div class="contact-title-line"></div>
+  </div>
+  <div class="contact-body">
+    <div class="contact-left">
+      <div class="contact-dots">
+        <Dots dotColor={"#FCA311"} />
+      </div>
+      <div class="contact-form">
+        <ContactForm client:load />
+      </div>
     </div>
+    <div class="contact-content">
+      <p>
+        Want to talk about opportunities, collaborate on a project, or discuss
+        changing careers? Send me a message or reach out to me through the links
+        below.
+      </p>
+      <div class="contact-links">
+        <LinkButton
+          href={MAIL_URL}
+          className="focus-outline p-3 sm:p-1"
+          ariaLabel={"email"}
+          title={"Email Me"}
+        >
+          <MailIcon />
+        </LinkButton>
+        <LinkButton
+          href={LINKEDIN_URL}
+          className="focus-outline p-3 sm:p-1"
+          ariaLabel={"linkedin"}
+          title={"LinkedIn"}
+        >
+          <LinkedInIcon />
+        </LinkButton>
+        <LinkButton
+          href={GITHUB_URL}
+          className="focus-outline p-3 sm:p-1"
+          ariaLabel={"github"}
+          title={"Github"}
+        >
+          <GithubIcon />
+        </LinkButton>
+      </div>
+    </div>
+  </div>
 </section>
 
 <style>
-    #contact {
-        @apply mb-8;
-    }
-    .contact-header {
-        @apply text-center relative w-72 mx-auto mt-6 mb-12;
-    }
-    .contact-title {
-        @apply relative z-20;
-    }
-    .contact-title-line {
-        @apply bg-accent w-28 sm:w-36 h-6 absolute -bottom-2 right-6 sm:right-0 z-10;
-    }
-    .contact-body {
-        @apply flex flex-wrap gap-12 flex-col-reverse sm:flex-nowrap sm:flex-row;
-    }
-    .contact-left {
-        @apply relative w-full sm:w-1/2;
-    }
-    .contact-dots {
-        @apply hidden sm:block absolute -mt-4 -ml-6 z-0;
-    }
-    .contact-form {
-        @apply relative z-10;
-    }
-    .contact-content {
-        @apply w-full sm:w-1/2 sm:mt-24;
-    }
-    .contact-links {
-        @apply flex gap-16 justify-center mt-8;
-    }
-    svg {
-        @apply fill-primary group-hover:fill-secondary;
+  #contact {
+    @apply mb-8;
+  }
+  .contact-header {
+    @apply text-center relative w-72 mx-auto mt-6 mb-12;
+  }
+  .contact-title {
+    @apply relative z-20;
+  }
+  .contact-title-line {
+    @apply bg-accent w-28 sm:w-36 h-6 absolute -bottom-2 right-6 sm:right-0 z-10;
+  }
+  .contact-body {
+    @apply flex flex-wrap gap-12 flex-col-reverse sm:flex-nowrap sm:flex-row;
+  }
+  .contact-left {
+    @apply relative w-full sm:w-1/2;
+  }
+  .contact-dots {
+    @apply hidden sm:block absolute -mt-4 -ml-6 z-0;
+  }
+  .contact-form {
+    @apply relative z-10;
+  }
+  .contact-content {
+    @apply w-full sm:w-1/2 sm:mt-24;
+  }
+  .contact-links {
+    @apply flex gap-16 justify-center mt-8;
+  }
+  svg {
+    @apply fill-primary group-hover:fill-secondary;
   }
 </style>

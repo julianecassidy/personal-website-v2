@@ -7,39 +7,39 @@ import LinkedInIcon from "./icons/LinkedInIcon.astro";
 ---
 
 <div class="social-bar">
-    <LinkButton
-        href={"resume.pdf"}
-        className="focus-outline p-3 sm:p-1"
-        ariaLabel={"resume"}
-        title={"Resume"}
-    >
-        <Resume />
-    </LinkButton>
-    <LinkButton
-        href={LINKEDIN.href}
-        className="focus-outline p-3 sm:p-1"
-        ariaLabel={"linkedin"}
-        title={"LinkedIn"}
-    >
-        <LinkedInIcon />
-    </LinkButton>
-    <LinkButton
-        href={GITHUB.href}
-        className="focus-outline p-3 sm:p-1"
-        ariaLabel={"github"}
-        title={"Github"}
-    >
-        <Github />
-    </LinkButton>
-    <div class="social-bar-line"></div>
+  <LinkButton
+    href={"resume.pdf"}
+    className="focus-outline p-3 sm:p-1"
+    ariaLabel={"resume"}
+    title={"Resume"}
+  >
+    <Resume />
+  </LinkButton>
+  <LinkButton
+    href={LINKEDIN.href}
+    className="focus-outline p-3 sm:p-1"
+    ariaLabel={"linkedin"}
+    title={"LinkedIn"}
+  >
+    <LinkedInIcon />
+  </LinkButton>
+  <LinkButton
+    href={GITHUB.href}
+    className="focus-outline p-3 sm:p-1"
+    ariaLabel={"github"}
+    title={"Github"}
+  >
+    <Github />
+  </LinkButton>
+  <div class="social-bar-line"></div>
 </div>
 
 <style>
-    .social-bar {
-        @apply invisible md:visible flex w-12 gap-4 flex-wrap justify-center
+  .social-bar {
+    @apply invisible md:visible flex w-12 gap-4 flex-wrap justify-center
         fixed bottom-0 left-8 z-20;
-    }
-    .social-bar-line {
-        @apply w-0.5 h-48 bg-primary;
-    }
+  }
+  .social-bar-line {
+    @apply w-0.5 h-48 bg-primary;
+  }
 </style>

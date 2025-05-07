@@ -14,10 +14,7 @@ export type SocialObject = {
   linkTitle: string;
 };
 
-export type SocialMedia =
-  | "LinkedIn"
-  | "GitHub"
-  | "Medium";
+export type SocialMedia = "LinkedIn" | "GitHub" | "Medium";
 
 export type Project = {
   title: string;
@@ -27,13 +24,13 @@ export type Project = {
   githubUrl: string;
   slug: string;
   images: Array<string>;
-}
+};
 
 export type Skill = {
   name: string;
   svg: string;
   fill: string;
-}
+};
 
 export type Experience = {
   role: string;
@@ -41,7 +38,7 @@ export type Experience = {
   timeSpan: string;
   description: string;
   highlights: string[];
-}
+};
 
 export type Post = {
   id: number;
@@ -50,10 +47,10 @@ export type Post = {
   content: string;
   date: string;
   canonical: string;
-  tags: Array<Tag>
-}
+  tags: Array<Tag>;
+};
 
 export type Tag = {
   id: number;
   name: string;
-}
+};

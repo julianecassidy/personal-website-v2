@@ -13,40 +13,44 @@ and other thoughts, both technical and not`;
 
 const postData = await BlogApi.getPosts();
 const posts = postData.map((post: Post) => ({
-    ...post,
-    date: BlogApi.formatDate(post.date),
+  ...post,
+  date: BlogApi.formatDate(post.date),
 }));
-
 ---
 
 <Layout title="Juliane Cassidy | Blog">
-    <Main>
-        <Header pageTitle={pageTitle} pageDesc={pageDesc} />
-        <BlogPost>
-            {posts.length === 0
-                ? <div class="blog-no-posts"><p>No posts to display.</p></div>
-                : <div class="blog-posts">
-                    {posts.map((post: Post) =>
-                        <BlogPostCard
-                            id={post.id}
-                            permalink={post.permalink}
-                            title={post.title}
-                            content={post.content}
-                            date={post.date}
-                            tags={post.tags}
-                        />
-                    )}
-                </div>
-            }
-        </BlogPost>
-    </Main>
+  <Main>
+    <Header pageTitle={pageTitle} pageDesc={pageDesc} />
+    <BlogPost>
+      {
+        posts.length === 0 ? (
+          <div class="blog-no-posts">
+            <p>No posts to display.</p>
+          </div>
+        ) : (
+          <div class="blog-posts">
+            {posts.map((post: Post) => (
+              <BlogPostCard
+                id={post.id}
+                permalink={post.permalink}
+                title={post.title}
+                content={post.content}
+                date={post.date}
+                tags={post.tags}
+              />
+            ))}
+          </div>
+        )
+      }
+    </BlogPost>
+  </Main>
 </Layout>
 
 <style>
-    .blog-posts {
-        @apply flex flex-wrap gap-16 justify-center;
-    }
-    .blog-no-posts {
-        @apply text-center;
-    }
+  .blog-posts {
+    @apply flex flex-wrap gap-16 justify-center;
+  }
+  .blog-no-posts {
+    @apply text-center;
+  }
 </style>

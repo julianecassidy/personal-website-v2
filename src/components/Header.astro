@@ -1,9 +1,9 @@
 ---
 export interface Props {
-    pageTitle: string;
-    pageDesc?: string;
-    accentText?: string;
-    titleCustomClass?: string;
+  pageTitle: string;
+  pageDesc?: string;
+  accentText?: string;
+  titleCustomClass?: string;
 }
 
 const { pageTitle, pageDesc, accentText, titleCustomClass } = Astro.props;
@@ -12,33 +12,33 @@ const formattedAccent = accentText?.toLowerCase();
 ---
 
 <header>
-    <div class="header">
-        {accentText && <div class="header-accent">{formattedAccent}</div>}
-        <div class={titleCustomClass ? titleCustomClass : "header-title"}>
-            <h1>{formattedTitle}</h1>
-        </div>
-        <hr />
-        <div class="header-desc">
-            {pageDesc}
-        </div>
+  <div class="header">
+    {accentText && <div class="header-accent">{formattedAccent}</div>}
+    <div class={titleCustomClass ? titleCustomClass : "header-title"}>
+      <h1>{formattedTitle}</h1>
     </div>
+    <hr />
+    <div class="header-desc">
+      {pageDesc}
+    </div>
+  </div>
 </header>
 
 <style>
-    .header {
-        @apply flex flex-wrap content-center mt-16 my-8 sm:my-24 sm:mx-24;
-    }
-    .header-title {
-        @apply w-11/12 text-center my-5 mx-auto whitespace-nowrap;
-    }
-    .header-accent {
-        @apply hidden sm:block sm:font-serif text-accent sm:text-4xl md:text-6xl
+  .header {
+    @apply flex flex-wrap content-center mt-16 my-8 sm:my-24 sm:mx-24;
+  }
+  .header-title {
+    @apply w-11/12 text-center my-5 mx-auto whitespace-nowrap;
+  }
+  .header-accent {
+    @apply hidden sm:block sm:font-serif text-accent sm:text-4xl md:text-6xl
         ml-12 lg:ml-72;
-    }
-    hr {
-        @apply w-6/12 max-w-md border-2 sm:border-4 border-accent mx-auto mt-2 mb-5;
-    }
-    .header-desc {
-        @apply w-full font-sans text-xl sm:text-3xl text-center mx-auto mx-12;
-    }
+  }
+  hr {
+    @apply w-6/12 max-w-md border-2 sm:border-4 border-accent mx-auto mt-2 mb-5;
+  }
+  .header-desc {
+    @apply w-full font-sans text-xl sm:text-3xl text-center mx-auto mx-12;
+  }
 </style>

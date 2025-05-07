@@ -1,5 +1,5 @@
 function withOpacity(variableName) {
-  return ({ opacityValue } ) => {
+  return ({ opacityValue }) => {
     if (opacityValue !== undefined) {
       return `rgba(var(${variableName}), ${opacityValue})`;
     }
@@ -38,5 +38,4 @@ export default {
     },
   },
   plugins: [require("@tailwindcss/typography")],
-}
-
+};

@@ -17,7 +17,7 @@
   }
   html[data-theme="dark"] {
     --color-primary: 255, 255, 247;
-    --color-secondary:  66, 118, 138;
+    --color-secondary: 66, 118, 138;
     --color-accent: 252, 163, 17;
     --color-fill: 1, 22, 30;
     --color-base: 255, 255, 247;
@@ -37,7 +37,12 @@
   html[data-theme="dark"] #light-off-svg {
     display: block;
   }
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-serif tracking-wider text-base my-4;
   }
   h1 {

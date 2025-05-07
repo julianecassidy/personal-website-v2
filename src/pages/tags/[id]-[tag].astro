@@ -8,11 +8,11 @@ import BlogPostCard from "@components/BlogPostCard.astro";
 import { BlogApi } from "@utils/blogApi";
 
 export async function getStaticPaths() {
-    const tags = await BlogApi.getTags()
+  const tags = await BlogApi.getTags();
 
   return tags.map((t: Tag) => {
     return {
-      params: {id: t.id, tag: t.name},
+      params: { id: t.id, tag: t.name },
     };
   });
 }
@@ -21,39 +21,43 @@ const { id, tag } = Astro.params;
 
 const taggedPostData = await BlogApi.getTaggedPosts(id);
 const taggedPosts = taggedPostData.map((post: Post) => ({
-    ...post,
-    date: BlogApi.formatDate(post.date),
+  ...post,
+  date: BlogApi.formatDate(post.date),
 }));
-
 ---
 
 <Layout title=`Posts tagged: ${tag}`>
-    <Main>
-        <Header accentText={"Posts tagged:"} pageTitle={tag} />
-        <BlogPost>
-            {taggedPosts.length === 0
-                ? <div class="blog-no-posts"><p>No posts to display.</p></div>
-                : <div class="blog-posts">
-                    {taggedPosts.map((post: Post) =>
-                        <BlogPostCard
-                            id={post.id}
-                            permalink={post.permalink}
-                            title={post.title}
-                            content={post.content}
-                            date={post.date}
-                        />
-                    )}
-                </div>
-            }
-        </BlogPost>
-    </Main>
+  <Main>
+    <Header accentText={"Posts tagged:"} pageTitle={tag} />
+    <BlogPost>
+      {
+        taggedPosts.length === 0 ? (
+          <div class="blog-no-posts">
+            <p>No posts to display.</p>
+          </div>
+        ) : (
+          <div class="blog-posts">
+            {taggedPosts.map((post: Post) => (
+              <BlogPostCard
+                id={post.id}
+                permalink={post.permalink}
+                title={post.title}
+                content={post.content}
+                date={post.date}
+              />
+            ))}
+          </div>
+        )
+      }
+    </BlogPost>
+  </Main>
 </Layout>
 
 <style>
-    .blog-posts {
-        @apply flex flex-wrap gap-16 justify-center;
-    }
-    .blog-no-posts {
-        @apply text-center;
-    }
+  .blog-posts {
+    @apply flex flex-wrap gap-16 justify-center;
+  }
+  .blog-no-posts {
+    @apply text-center;
+  }
 </style>
