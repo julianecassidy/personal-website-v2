@@ -159,9 +159,9 @@ const clever: Experience = {
   serve as product owner of new features for a suite of healthcare services. Build in TypeScript, 
   React, MongoDB, and React Native to make apps for admins, brokers, plan owners, and individual users.`,
   highlights: [
-    "Built a mobile feature in React Native that lets users track their health data over time, combining data from Apple HealthKit and third-party health APIs",
     "Owned the automated invoicing product from initial design to scaling it for 400 groups covering more than 12,000 members",
-    "Got buy in and rearchitected the daily file ingestion process for over 80,000 rows of data to improve data integrity and reduce error noise through tailored Cloudwatch setup",
+    "Built a mobile feature in React Native that lets users track their health data, combining data from Apple HealthKit, Android Health Connect, and third-party health APIs",
+    "Got buy in and rearchitected the daily file ingestion process for 50K+ members/day of data to improve data integrity and reduce error noise through tailored CloudWatch setup",
   ],
 };
 
