@@ -4,31 +4,15 @@
     "baseUrl": "src",
     "jsx": "react-jsx",
     "target": "es2017",
-    "lib": [
-      "es2022"
-    ],
+    "lib": ["es2022"],
     "paths": {
-      "@assets/*": [
-        "assets/*"
-      ],
-      "@config": [
-        "config.ts"
-      ],
-      "@components/*": [
-        "components/*"
-      ],
-      "@layouts/*": [
-        "layouts/*"
-      ],
-      "@pages/*": [
-        "pages/*"
-      ],
-      "@styles/*": [
-        "styles/*"
-      ],
-      "@utils/*": [
-        "utils/*"
-      ]
+      "@assets/*": ["assets/*"],
+      "@config": ["config.ts"],
+      "@components/*": ["components/*"],
+      "@layouts/*": ["layouts/*"],
+      "@pages/*": ["pages/*"],
+      "@styles/*": ["styles/*"],
+      "@utils/*": ["utils/*"]
     },
     "jsxImportSource": "react"
   }

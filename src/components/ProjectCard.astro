@@ -5,157 +5,156 @@ import Button from "@components/Button.astro";
 import Dots from "@components/Dots.astro";
 
 export interface Props {
-    project: Project;
-    idx: number;
+  project: Project;
+  idx: number;
 }
 
 const { project, idx } = Astro.props;
-const {
-    title,
-    description,
-    languages,
-    demoUrl,
-    githubUrl,
-    slug,
-    images } = project;
+const { title, description, languages, demoUrl, githubUrl, slug, images } =
+  project;
 
 const directionClass = idx % 2 === 0 ? "flex-row" : "flex-row-reverse";
 const dotColor = idx % 2 === 0 ? "#FCA311" : "#154F66";
 ---
 
 <div class=`project-card ${directionClass}`>
-    <div class="project-image">
-        <img
-            class="project-img-src"
-            src={images[0] ? `screenshots/${images[0]}` : "https://picsum.photos/450/350"}
-            alt={images[0] ?`${title} screenshot` : "Randomly generated"}
-        />
-        <div class=`project-dots-${idx}`>
-            <Dots dotColor={dotColor} />
-        </div>
+  <div class="project-image">
+    <img
+      class="project-img-src"
+      src={images[0]
+        ? `screenshots/${images[0]}`
+        : "https://picsum.photos/450/350"}
+      alt={images[0] ? `${title} screenshot` : "Randomly generated"}
+    />
+    <div class=`project-dots-${idx} dots-parallax` data-speed="0.2">
+      <Dots dotColor={dotColor} />
     </div>
-    <div class="project-content">
-        <h3>{title}</h3>
-        <p>{description}</p>
-        <div class="project-skills">
-            {
-                languages.map((l:string) => {
-                    return <div class="project-skill">{l}</div>;
-                })
-            }
-        </div>
-        <div class="project-links">
-            {githubUrl &&
-            <LinkButton
-                href={githubUrl}
-                className="focus-outline p-3 sm:p-1"
-                ariaLabel={`${title}-github`}
-                title={`${title} Github`}
-            >
-                <svg
-                    width="24px"
-                    height="24px"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    stroke="#154F66"
-                >
-                    <path
-                        d="M16 22.0268V19.1568C16.0375 18.68 15.9731 18.2006 15.811 17.7506C15.6489 17.3006 15.3929 16.8902 15.06 16.5468C18.2 16.1968 21.5 15.0068 21.5 9.54679C21.4997 8.15062 20.9627 6.80799 20 5.79679C20.4558 4.5753 20.4236 3.22514 19.91 2.02679C19.91 2.02679 18.73 1.67679 16 3.50679C13.708 2.88561 11.292 2.88561 8.99999 3.50679C6.26999 1.67679 5.08999 2.02679 5.08999 2.02679C4.57636 3.22514 4.54413 4.5753 4.99999 5.79679C4.03011 6.81549 3.49251 8.17026 3.49999 9.57679C3.49999 14.9968 6.79998 16.1868 9.93998 16.5768C9.61098 16.9168 9.35725 17.3222 9.19529 17.7667C9.03334 18.2112 8.96679 18.6849 8.99999 19.1568V22.0268"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"></path>
-                    <path
-                        d="M9 20.0267C6 20.9999 3.5 20.0267 2 17.0267"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"></path>
-                </svg>
-            </LinkButton>
-            }
-            {demoUrl &&
-            <LinkButton
-                href={demoUrl}
-                className="focus-outline p-3 sm:p-1"
-                ariaLabel={`${title}-demo`}
-                title={`${title} Demo`}
-            >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#154F66"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                >
-                    <path
-                        d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
-                    ></path>
-                    <path
-                        d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
-                    ></path>
-                </svg>
-            </LinkButton>
-        }
-        {slug &&
-            <Button
-                href={slug}
-                text="Read More"
-                className="sm:ml-auto"
-                ariaLabel={`${title}-read-more`}
-                title={`${title} Read More`}
-            >
-            </Button>
-        }
-        </div>
+  </div>
+  <div class="project-content">
+    <h3>{title}</h3>
+    <p>{description}</p>
+    <div class="project-skills">
+      {
+        languages.map((l: string) => {
+          return <div class="project-skill">{l}</div>;
+        })
+      }
     </div>
+    <div class="project-links">
+      {
+        githubUrl && (
+          <LinkButton
+            href={githubUrl}
+            className="focus-outline p-3 sm:p-1"
+            ariaLabel={`${title}-github`}
+            title={`${title} Github`}
+          >
+            <svg
+              width="24px"
+              height="24px"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              stroke="#154F66"
+            >
+              <path
+                d="M16 22.0268V19.1568C16.0375 18.68 15.9731 18.2006 15.811 17.7506C15.6489 17.3006 15.3929 16.8902 15.06 16.5468C18.2 16.1968 21.5 15.0068 21.5 9.54679C21.4997 8.15062 20.9627 6.80799 20 5.79679C20.4558 4.5753 20.4236 3.22514 19.91 2.02679C19.91 2.02679 18.73 1.67679 16 3.50679C13.708 2.88561 11.292 2.88561 8.99999 3.50679C6.26999 1.67679 5.08999 2.02679 5.08999 2.02679C4.57636 3.22514 4.54413 4.5753 4.99999 5.79679C4.03011 6.81549 3.49251 8.17026 3.49999 9.57679C3.49999 14.9968 6.79998 16.1868 9.93998 16.5768C9.61098 16.9168 9.35725 17.3222 9.19529 17.7667C9.03334 18.2112 8.96679 18.6849 8.99999 19.1568V22.0268"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M9 20.0267C6 20.9999 3.5 20.0267 2 17.0267"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </LinkButton>
+        )
+      }
+      {
+        demoUrl && (
+          <LinkButton
+            href={demoUrl}
+            className="focus-outline p-3 sm:p-1"
+            ariaLabel={`${title}-demo`}
+            title={`${title} Demo`}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#154F66"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+            </svg>
+          </LinkButton>
+        )
+      }
+      {
+        slug && (
+          <Button
+            href={slug}
+            text="Read More"
+            className="sm:ml-auto"
+            ariaLabel={`${title}-read-more`}
+            title={`${title} Read More`}
+          />
+        )
+      }
+    </div>
+  </div>
 </div>
 
 <style>
-    .project-card {
-        @apply border-2 border-border rounded-lg mx-1 my-8 p-8 flex flex-wrap
+  .project-card {
+    @apply border-2 border-border rounded-lg mx-1 my-8 p-8 flex flex-wrap
         sm:flex-nowrap gap-x-8 items-center justify-center;
-    }
-    .project-image {
-        @apply relative mb-4 sm:mb-0 sm:w-5/12;
-    }
-    .project-image img {
-        @apply relative z-10 border-2 border-border;
-    }
-    .project-dots-0 {
-        @apply hidden sm:block absolute -top-5 -left-7 z-0;
-    }
-    .project-dots-1 {
-        @apply hidden sm:block absolute -bottom-5 -right-7 z-0;
-    }
-    .project-dots-2 {
-        @apply hidden sm:block absolute -bottom-5 -left-7 z-0;
-    }
-    .project-dots-3 {
-        @apply hidden sm:block absolute -top-5 -right-7 z-0;
-    }
-    .project-content {
-        @apply w-10/12 sm:w-1/2;
-    }
-    .project-content h3 {
-        @apply font-sans text-3xl mb-2;
-    }
-    .project-skills {
-        @apply flex flex-wrap items-center justify-start gap-x-2.5 gap-y-2 my-4;
-    }
-    .project-skill {
-        @apply px-2 py-1 bg-muted rounded-sm font-display text-[#01161e];
-    }
-    .project-links {
-        @apply flex gap-5 flex-wrap sm:flex-nowrap justify-center sm:justify-start;
-    }
-    .project-links button {
-        @apply w-10/12 sm:w-auto;
-    }
-    svg {
-        @apply stroke-primary group-hover:stroke-secondary;
+  }
+  .project-image {
+    @apply relative mb-4 sm:mb-0 sm:w-5/12;
+  }
+  .project-image img {
+    @apply relative z-10 border-2 border-border;
+  }
+  .project-dots-0 {
+    @apply hidden sm:block absolute -top-10 -left-7 z-0;
+  }
+  .project-dots-1 {
+    @apply hidden sm:block absolute bottom-3 -right-7 z-0;
+  }
+  .project-dots-2 {
+    @apply hidden sm:block absolute bottom-5 -left-7 z-0;
+  }
+  .project-dots-3 {
+    @apply hidden sm:block absolute -top-16 -right-7 z-0;
+  }
+  .project-content {
+    @apply w-10/12 sm:w-1/2;
+  }
+  .project-content h3 {
+    @apply font-sans text-3xl mb-2;
+  }
+  .project-skills {
+    @apply flex flex-wrap items-center justify-start gap-x-2.5 gap-y-2 my-4;
+  }
+  .project-skill {
+    @apply px-2 py-1 bg-muted rounded-sm font-display text-[#01161e];
+  }
+  .project-links {
+    @apply flex gap-5 flex-wrap sm:flex-nowrap justify-center sm:justify-start;
+  }
+  .project-links button {
+    @apply w-10/12 sm:w-auto;
+  }
+  svg {
+    @apply stroke-primary group-hover:stroke-secondary;
   }
 </style>

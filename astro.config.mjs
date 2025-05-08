@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 import { SITE } from "./src/config";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
@@ -11,13 +11,13 @@ export default defineConfig({
   integrations: [tailwind(), sitemap(), react()],
   vite: {
     optimizeDeps: {
-      exclude: ["@resvg/resvg-js"]
-    }
+      exclude: ["@resvg/resvg-js"],
+    },
   },
   redirects: {
-    '/home': '/',
-    '/blog': '/posts/',
-    '/about': '/#about',
+    "/home": "/",
+    "/blog": "/posts/",
+    "/about": "/#about",
   },
-  scopedStyleStrategy: "where"
+  scopedStyleStrategy: "where",
 });

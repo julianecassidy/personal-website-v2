@@ -3,12 +3,12 @@ import type { Tag } from "../types";
 import Button from "./Button.astro";
 
 export interface Props {
-    id: number;
-    permalink: string;
-    title: string;
-    content: string;
-    date: string;
-    tags?: Array<Tag>;
+  id: number;
+  permalink: string;
+  title: string;
+  content: string;
+  date: string;
+  tags?: Array<Tag>;
 }
 
 const { id, permalink, title, content, date, tags } = Astro.props;
@@ -17,49 +17,50 @@ const contentSnippet = content.slice(0, 120);
 ---
 
 <div class="blog-post-card">
-    <h2>{titleSnippet}</h2>
-    <div class="blog-post-card-date">{date}</div>
-    <p>{contentSnippet}...</p>
-    <div class="blog-post-tags">
-        {tags &&
-            tags.map((t) => {
-                return (
-                    <a href= {`/tags/${t.id}-${t.name}`}>
-                        <div class="blog-post-tag">{t.name}</div>
-                    </a>
-                );
-            })
-        }
-    </div>
-    <div class="blog-post-card-button">
-        <Button
-            href={`/posts/${id}-${permalink}`}
-            text="Read More"
-            className="sm:ml-auto"
-            ariaLabel={`${title}-read-more`}
-            title={`${title} Read More`}
-        />
-    </div>
+  <h2>{titleSnippet}</h2>
+  <div class="blog-post-card-date">{date}</div>
+  <p>{contentSnippet}...</p>
+  <div class="blog-post-tags">
+    {
+      tags &&
+        tags.map((t) => {
+          return (
+            <a href={`/tags/${t.id}-${t.name}`}>
+              <div class="blog-post-tag">{t.name}</div>
+            </a>
+          );
+        })
+    }
+  </div>
+  <div class="blog-post-card-button">
+    <Button
+      href={`/posts/${id}-${permalink}`}
+      text="Read More"
+      className="sm:ml-auto"
+      ariaLabel={`${title}-read-more`}
+      title={`${title} Read More`}
+    />
+  </div>
 </div>
 
 <style>
-    .blog-post-card {
-        @apply h-[600px] w-[380px] sm:h-[450px] border-2 border-border rounded-lg py-4 px-6
+  .blog-post-card {
+    @apply h-[600px] w-[380px] sm:h-[450px] border-2 border-border rounded-lg py-4 px-6
         relative;
-    }
-    .blog-post-card h2 {
-        @apply text-4xl font-sans text-center mb-2;
-    }
-    .blog-post-card-date {
-        @apply mb-2 font-display uppercase text-center mb-3;
-    }
-    .blog-post-tags {
-        @apply flex flex-wrap items-center justify-start gap-x-2.5 gap-y-2 my-4 text-[#01161e];
-    }
-    .blog-post-tag {
-        @apply px-2 py-1 bg-muted rounded-sm font-display;
-    }
-    .blog-post-card-button {
-        @apply text-center absolute bottom-4 left-32;
-    }
+  }
+  .blog-post-card h2 {
+    @apply text-4xl font-sans text-center mb-2;
+  }
+  .blog-post-card-date {
+    @apply mb-2 font-display uppercase text-center mb-3;
+  }
+  .blog-post-tags {
+    @apply flex flex-wrap items-center justify-start gap-x-2.5 gap-y-2 my-4 text-[#01161e];
+  }
+  .blog-post-tag {
+    @apply px-2 py-1 bg-muted rounded-sm font-display;
+  }
+  .blog-post-card-button {
+    @apply text-center absolute bottom-4 left-32;
+  }
 </style>

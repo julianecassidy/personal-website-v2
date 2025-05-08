@@ -1,41 +1,52 @@
 ---
-import type { Experience } from 'types';
+import type { Experience } from "types";
 
 export interface Props {
-    experience: Experience;
+  experience: Experience;
 }
 
 const { experience } = Astro.props;
-const {
-    role,
-    company,
-    timeSpan,
-    description
-} = experience;
-
+const { role, company, timeSpan, description, highlights } = experience;
 ---
+
 <div class="experience-card">
-    <div class="experience-role">{role}</div>
-    <div class="experience-timeSpan">{timeSpan}</div>
-    <div class="experience-company">{company}</div>
-    <div class="experience-desrciption">{description}</div>
+  <div class="experience-role">{role}</div>
+  <div class="experience-timeSpan">{timeSpan}</div>
+  <div class="experience-company">{company}</div>
+  <div class="experience-desrciption">{description}</div>
+  <div class="experience-highlights">
+    Impact
+    {
+      highlights.map((highlight) => (
+        <ul>
+          <li>{highlight}</li>
+        </ul>
+      ))
+    }
+  </div>
 </div>
 
 <style>
-    .experience-card {
-        @apply border-2 border-border rounded-lg my-8 p-4 flex flex-wrap
+  .experience-card {
+    @apply border-2 border-border rounded-lg my-8 p-4 flex flex-wrap
         w-full;
-    }
-    .experience-role {
-        @apply font-sans text-xl text-left font-semibold w-3/5;
-    }
-    .experience-timeSpan {
-        @apply font-sans text-lg text-right w-2/5;
-    }
-    .experience-company {
-        @apply font-sans text-lg text-left w-full mb-2;
-    }
-    .experience-description {
-        @apply w-full;
-    }
+  }
+  .experience-role {
+    @apply font-sans text-xl text-left font-semibold w-3/5;
+  }
+  .experience-timeSpan {
+    @apply font-sans text-lg text-right w-2/5;
+  }
+  .experience-company {
+    @apply font-sans text-lg text-left w-full mb-2;
+  }
+  .experience-description {
+    @apply w-full mb-8;
+  }
+  .experience-highlights {
+    @apply font-bold mt-4;
+  }
+  .experience-highlights ul {
+    @apply text-sm font-normal list-inside pb-1;
+  }
 </style>

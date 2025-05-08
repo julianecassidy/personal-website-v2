@@ -5,28 +5,32 @@ import ProjectCard from "@components/ProjectCard.astro";
 ---
 
 <section id="projects">
-    <div class="projects-header">
-        <div class="projects-title">
-            <h2>Projects</h2>
-        </div>
-        <div class="projects-title-line"></div>
+  <div class="projects-header">
+    <div class="projects-title">
+      <h2>Projects</h2>
     </div>
-    <div class="projects-list">
-        {PROJECTS.map((p:Project, idx:number) => <ProjectCard project={p} idx={idx} />)}
-    </div>
+    <div class="projects-title-line title-line-parallax" data-speed="0.2"></div>
+  </div>
+  <div class="projects-list">
+    {
+      PROJECTS.map((p: Project, idx: number) => (
+        <ProjectCard project={p} idx={idx} />
+      ))
+    }
+  </div>
 </section>
 
 <style>
-    .projects-header {
-        @apply text-center relative w-72 mx-auto my-6;
-    }
-    .projects-title {
-        @apply relative z-20;
-    }
-    .projects-title-line {
-        @apply bg-accent w-28 sm:w-36 h-6 absolute -bottom-2 right-6 sm:right-0 z-10;
-    }
-    .projects-list {
-        @apply mt-10;
-    }
+  .projects-header {
+    @apply text-center relative w-72 mx-auto my-6;
+  }
+  .projects-title {
+    @apply relative z-20;
+  }
+  .projects-title-line {
+    @apply bg-accent w-28 sm:w-36 h-6 absolute -bottom-2 right-8 z-10;
+  }
+  .projects-list {
+    @apply mt-10;
+  }
 </style>

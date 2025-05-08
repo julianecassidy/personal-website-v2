@@ -5,10 +5,10 @@ import Main from "@layouts/Main.astro";
 import BlogPost from "@layouts/BlogPost.astro";
 import Header from "@components/Header.astro";
 import { BlogApi } from "@utils/blogApi";
-import { marked } from 'marked';
+import { marked } from "marked";
 
 export async function getStaticPaths() {
-    const posts = await BlogApi.getPosts()
+  const posts = await BlogApi.getPosts();
 
   return posts.map((p: Post) => {
     return {
@@ -30,28 +30,31 @@ for (let tag of post.tags) {
 }
 
 // console.log(Object.values(post.tags));
-
 ---
 
-<Layout title={post.title} canonicalURL={post.canonical} description={metaDescription}>
-    <Main>
-        <Header
-          accentText={post.date}
-          pageTitle={post.title}
-          pageDesc={`tags: ${tagList.join(", ")}`}
-          titleCustomClass="w-11/12 text-center my-5 mx-auto"
-        />
-        <BlogPost>
-            <article id="blog-post" set:html={post.content} />
-        </BlogPost>
-    </Main>
+<Layout
+  title={post.title}
+  canonicalURL={post.canonical}
+  description={metaDescription}
+>
+  <Main>
+    <Header
+      accentText={post.date}
+      pageTitle={post.title}
+      pageDesc={`tags: ${tagList.join(", ")}`}
+      titleCustomClass="w-11/12 text-center my-5 mx-auto"
+    />
+    <BlogPost>
+      <article id="blog-post" set:html={post.content} />
+    </BlogPost>
+  </Main>
 </Layout>
 
 <style>
-    #blog-post {
-        @apply mx-1 sm:mx-24 max-w-2xl;
-    }
-    #blog-post ul {
-        @apply list-disc pb-4;
-    }
+  #blog-post {
+    @apply mx-1 sm:mx-24 max-w-2xl;
+  }
+  #blog-post ul {
+    @apply list-disc pb-4;
+  }
 </style>

@@ -1,34 +1,31 @@
 ---
-import type { Skill } from 'types';
+import type { Skill } from "types";
 
 export interface Props {
-    skill: Skill;
+  skill: Skill;
 }
 
 const { skill } = Astro.props;
 const { name, svg, fill } = skill;
-
 ---
-<div
-    class="skill group"
-    style={{backgroundColor: fill}}
->
-    <img src={`logos/${svg}`} alt={name}>
-    <div class="skill-text">
-        {name}
-    </div>
+
+<div class="skill group" style={{ backgroundColor: fill }}>
+  <img src={`logos/${svg}`} alt={name} />
+  <div class="skill-text">
+    {name}
+  </div>
 </div>
 
 <style>
-    .skill {
-        @apply w-[95px] h-[95px] ;
-    }
-    .skill img {
-        @apply w-[65px] h-[65px] relative top-[15px] m-auto;
-    }
-    .skill-text {
-        @apply opacity-0 w-[95px] h-[95px] relative -top-[65px] bg-muted text-right
-        text-[#01161e] pt-[70px] pr-1 transition duration-200 ease-in-out
-        group-hover:opacity-100;
-    }
+  .skill {
+    @apply w-[95px] h-[95px];
+  }
+  .skill img {
+    @apply w-[65px] h-[65px] relative top-[15px] m-auto;
+  }
+  .skill-text {
+    @apply opacity-0 w-[95px] h-[95px] relative -top-[65px] bg-muted text-right
+        text-[#01161e] text-nowrap pt-[70px] pr-1 transition duration-500 ease-in-out
+        group-hover:opacity-90 group-hover:scale-105;
+  }
 </style>

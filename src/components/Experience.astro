@@ -6,40 +6,40 @@ import Button from "@components/Button.astro";
 ---
 
 <section id="experience">
-    <div class="experience-left">
-        <div class="experience-header">
-            <div class="experience-title">
-                <h3>Experience</h3>
-            </div>
-            <div class="experience-title-line"></div>
-        </div>
-        <Button
-            href="resume.pdf"
-            text="Resume"
-            className="mx-auto"
-            ariaLabel={"resume"}
-            title={"resume"}
-        />
+  <div class="experience-left">
+    <div class="experience-header">
+      <div class="experience-title">
+        <h3>Experience</h3>
+      </div>
+      <div class="experience-title-line title-line-parallax" data-speed="0.2"></div>
     </div>
-    <div class="experience-list">
-        {EXPERIENCES.map((e:Experience) => <ExperienceCard experience={e} />)}
-    </div>
+    <Button
+      href="resume.pdf"
+      text="Resume"
+      className="mx-auto"
+      ariaLabel={"resume"}
+      title={"resume"}
+    />
+  </div>
+  <div class="experience-list">
+    {EXPERIENCES.map((e: Experience) => <ExperienceCard experience={e} />)}
+  </div>
 </section>
 
 <style>
-    #experience {
-        @apply flex flex-wrap justify-center gap-10 md:flex-nowrap mb-3;
-    }
-    .experience-left {
-        @apply flex flex-wrap justify-center self-start sm:w-1/4 sm:mt-12;
-    }
-    .experience-header {
-        @apply text-center relative w-full sm:w-72 mx-auto mt-4 md:mt-24 mb-12;
-    }
-    .experience-title {
-        @apply relative z-20;
-    }
-    .experience-title-line {
-        @apply bg-secondary w-28 sm:w-36 h-6 absolute bottom-1 left-0 sm:right-0 z-10;
-    }
+  #experience {
+    @apply flex flex-wrap justify-center gap-10 md:flex-nowrap mb-3;
+  }
+  .experience-left {
+    @apply flex flex-wrap justify-center self-start sm:w-1/4 sm:mt-12;
+  }
+  .experience-header {
+    @apply text-center relative w-full sm:w-72 mx-auto mt-4 md:mt-24 mb-12;
+  }
+  .experience-title {
+    @apply relative z-20;
+  }
+  .experience-title-line {
+    @apply bg-secondary w-28 sm:w-36 h-6 absolute bottom-1 -left-32 z-10;
+  }
 </style>
