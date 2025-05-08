@@ -1,4 +1,4 @@
-[build];
+[build]
 command = 'npm run build && cp _redirects build';
 functions = 'netlify/functions';
 publish = 'dist';
