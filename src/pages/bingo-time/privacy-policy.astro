@@ -1,0 +1,197 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Main from "@layouts/Main.astro";
+import Header from "@components/Header.astro";
+
+const pageTitle = "Privacy Policy";
+const pageDesc =
+  "How Bingo Time from Upshift Web Works collects, uses, and protects your data.";
+---
+
+<Layout title="Bingo App | Privacy Policy" description={pageDesc}>
+  <Main>
+    <Header pageTitle={pageTitle} pageDesc={pageDesc} />
+
+    <section id="privacy-policy" class="privacy-wrapper">
+      <article class="privacy-content">
+        <p><strong class="text-base">Last updated:</strong> December 7, 2025</p>
+        <p><strong>Company:</strong> Upshift Web Works</p>
+        <p>
+          <strong>Contact Email:</strong>
+          <a href="mailto:julianecassidy@gmail.com"> julianecassidy@gmail.com</a>
+        </p>
+
+        <p>
+          Upshift Web Works (“we,” “our,” or “us”) operates the Bingo app (“the
+          App”). This Privacy Policy explains how we collect, use, and protect
+          information when you use the App.
+        </p>
+        <p>
+          By using the App, you agree to the collection and use of information
+          in accordance with this Privacy Policy.
+        </p>
+
+        <h2>Information We Collect</h2>
+
+        <h3>1. Display Name</h3>
+        <p>
+          When you create or join a game, you choose a display name. This can be
+          any string you choose and does not have to identify you personally.
+        </p>
+
+        <h3>2. User-Generated Content</h3>
+        <p>We collect bingo-related content you create within the App, such as:</p>
+        <ul>
+          <li>Custom bingo card items</li>
+          <li>Game room codes or names</li>
+          <li>Other in-app gameplay information needed to run your session</li>
+        </ul>
+
+        <h3>3. Backend API Data</h3>
+        <p>
+          Our servers store the minimal data necessary to support game sessions,
+          including:
+        </p>
+        <ul>
+          <li>Display name</li>
+          <li>Bingo card items</li>
+          <li>
+            Gameplay state (e.g., selected items, room configuration)
+          </li>
+        </ul>
+        <p>
+          We do not collect analytics, crash reports, device identifiers, or
+          location information.
+        </p>
+
+        <h2>Information We Do Not Collect</h2>
+        <p>We do not collect:</p>
+        <ul>
+          <li>Email addresses</li>
+          <li>Phone numbers</li>
+          <li>Profile photos</li>
+          <li>Precise or approximate location</li>
+          <li>Contacts or address book</li>
+          <li>Advertising identifiers</li>
+          <li>Payment information</li>
+          <li>Any data not explicitly listed in the section above</li>
+        </ul>
+        <p>We also do not use third-party analytics or advertising services.</p>
+
+        <h2>How We Use Your Information</h2>
+        <p>We use the limited information we collect only to:</p>
+        <ul>
+          <li>Create and manage game sessions</li>
+          <li>Allow you to play bingo with friends</li>
+          <li>Maintain basic gameplay functionality</li>
+          <li>Operate and improve the App’s technical performance</li>
+        </ul>
+        <p>
+          We do not use your data for marketing, advertising, profiling, or
+          tracking.
+        </p>
+
+        <h2>Data Sharing and Disclosure</h2>
+        <p>
+          We do not sell your information or share it with third parties for
+          marketing or advertising.
+        </p>
+        <p>We may share data only in the following circumstances:</p>
+        <ul>
+          <li>
+            <strong>Service Providers:</strong> If required to operate our
+            backend API or infrastructure.
+          </li>
+          <li>
+            <strong>Legal Compliance:</strong> If required by law, subpoena, or
+            government request.
+          </li>
+        </ul>
+        <p>
+          Otherwise, your data stays within our system and is not shared
+          externally.
+        </p>
+
+        <h2>Data Retention</h2>
+        <p>
+          We retain your gameplay information only as long as necessary to
+          operate the App.
+        </p>
+        <p>
+          Game data may be deleted automatically after sessions end or after a
+          reasonable period of inactivity.
+        </p>
+        <p>
+          You may request deletion of your data at any time by contacting us at
+          the email address above.
+        </p>
+
+        <h2>Children’s Privacy</h2>
+        <p>The App is not intended for children under 13.</p>
+        <p>
+          We do not knowingly collect personal information from children. If we
+          learn that a child under 13 has provided information, we will delete
+          it promptly.
+        </p>
+
+        <h2>Security</h2>
+        <p>
+          We take reasonable measures to protect your data, but no method of
+          electronic storage or transmission is completely secure. We strive to
+          use commercially acceptable means to protect your information.
+        </p>
+
+        <h2>Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy from time to time.</p>
+        <p>
+          Any changes will be posted in the App or on our website, and the “Last
+          Updated” date will be revised. Your continued use of the App after
+          changes indicates your acceptance of the updated policy.
+        </p>
+
+        <h2>Contact Us</h2>
+        <p>If you have questions about this Privacy Policy, please contact us at:</p>
+        <p>
+          Email:
+          <a href="mailto:julianecassidy@gmail.com">julianecassidy@gmail.com</a>
+          <br />
+          Company: Upshift Web Works
+        </p>
+      </article>
+    </section>
+  </Main>
+</Layout>
+
+<style>
+  #privacy-policy {
+    @apply mx-4 mb-16 sm:mx-24;
+  }
+
+  .privacy-content {
+    @apply max-w-2xl mx-auto prose prose-invert;
+  }
+
+  .privacy-content h2 {
+    @apply mt-8 mb-4 text-2xl font-semibold text-base;
+  }
+
+  .privacy-content h3 {
+    @apply mt-6 mb-2 text-xl font-semibold;
+  }
+
+  .privacy-content p {
+    @apply text-base;
+  }
+
+  .privacy-content ul {
+    @apply list-disc pl-6 text-base;
+  }
+
+  .privacy-content strong {
+    @apply text-base font-semibold;
+  }
+
+  .privacy-content a {
+    @apply text-accent hover:text-secondary;
+  }
+</style>
